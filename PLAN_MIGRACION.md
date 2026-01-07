@@ -65,7 +65,7 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - `bancos/` → **Completado:** Clase `Banco` en `clases/bancos/banco.py` con métodos CRUD y búsqueda.
 - `clientes/` → **Completado:** Clase `Cliente` en `clases/clientes/cliente.py` con métodos básicos (listar, buscar, registrar).
 - `complementos/` → **Completado:** Clase `Caja` en `clases/complementos/caja.py` con métodos básicos de movimientos.
-- `contabilidad/` → Módulo `contabilidad.py` para operaciones contables.
+- `contabilidad/` → **Completado:** Clase `MovimientoContable` en `clases/contabilidad/movimiento_contable.py` con métodos para comprobantes y movimientos.
 - `facturacion/` → Módulo `facturacion.py` con clase `Factura`.
 - `vendedores/` → Módulo `vendedores.py` con clase `Vendedor`.
 
@@ -124,4 +124,4 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - **Riesgos:** Si encuentras dependencias complejas, prioriza funcionalidad core.
 - **Contacto:** Si necesitas ayuda en una fase específica, consulta este plan.
 
-**Estado Actual:** Fase 2 en progreso (bancos, clientes y complementos completados).
+**Estado Actual:** Fase 2 en progreso (bancos, clientes, complementos y contabilidad completados).
