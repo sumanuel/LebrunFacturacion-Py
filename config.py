@@ -11,6 +11,51 @@ DATABASE_CONFIG = {
     }
 }
 
+# Variables globales basadas en globales.cs
+GLOBALES = {
+    'bd': None,  # Base de datos actual
+    'Usuario_Actual': None,  # Usuario logueado
+    'separadorDecimal': '.',  # Separador decimal
+    'separadorDeMiles': ',',  # Separador de miles
+    'signoNegativo': '-',  # Signo negativo
+    'Origen': None,
+    'NumeroDoc': None,
+    'Reporte': None,
+    'mostarCodigoArt': True,  # Mostrar código de artículo
+    'imprimir': 1,
+    'puerto': 'COM1',  # Puerto de impresora
+    'impresoraRecibo': 'POS-80',
+    'tipoImpresora': None,
+    'flag21': '30',
+    # Códigos de formas de pago fiscal
+    'efectivobs': '03',
+    'efectivodol': '02',
+    'tarjeta': '09',
+    'credito': '13',
+    'cheque': '02',
+    'divisaigtf': '20',
+    'cambio': '02',
+    'cashea': '07',
+    'pagomovil': '06',
+    # Configuración de formato fiscal
+    'longitudPrecio': 9,
+    'factorPrecio': 100,
+    'longitudCantidad': 7,
+    'factorCantidad': 1000,
+    'longitudFormadePago': 9,
+    'factorFormadePago': 100,
+    'RellenoPrecio': '0',
+    'RellenoCantidad': '0',
+    'RellenoFormadePagpo': '0',
+    # Estados
+    'printerIniciado': False,
+    'procesoEnCurso': False,
+    'mostrarSpooler': False,
+    'es2k12': True,
+    'CadenaConexion': None,  # Cadena de conexión SQL Server (si se usa)
+    'intervalo': 5
+}
+
 # Otras configuraciones relevantes
 APP_SETTINGS = {
     'logs': 1,

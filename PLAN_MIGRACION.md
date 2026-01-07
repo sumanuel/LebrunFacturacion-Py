@@ -23,7 +23,7 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 **Archivos a Migrar:**
 
 - `ConexionBD.cs` → **Completado:** Mejorado `database.py` con clase `ConexionBD`, pools de conexiones, métodos equivalentes (ejecutar_query_dr, ejecutar_query_ds, etc.), y logging.
-- `globales.cs` → Fusionar en `config.py` como constantes globales.
+- `globales.cs` → **Completado:** Variables globales fusionadas en `config.py` como diccionario `GLOBALES`. Método `ConvertirListaADataTable` convertido a funciones en `utils.py`.
 - `UsuarioSistema.cs` → Crear clase `Usuario` en Python con métodos de autenticación.
 - `Compania.cs` → Crear clase `Compania` para configuración de empresa.
 - `FuncionesTexbox.cs` → Módulo `utils.py` con validaciones de entrada.
@@ -110,4 +110,4 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - **Riesgos:** Si encuentras dependencias complejas, prioriza funcionalidad core.
 - **Contacto:** Si necesitas ayuda en una fase específica, consulta este plan.
 
-**Estado Actual:** Fase 1 en progreso (ConexionBD.cs completado).
+**Estado Actual:** Fase 1 en progreso (ConexionBD.cs y globales.cs completados).
