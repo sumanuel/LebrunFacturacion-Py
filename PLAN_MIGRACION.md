@@ -26,8 +26,8 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - `globales.cs` → **Completado:** Variables globales fusionadas en `config.py` como diccionario `GLOBALES`. Método `ConvertirListaADataTable` convertido a funciones en `utils.py`.
 - `UsuarioSistema.cs` → **Completado:** Clase `Usuario` creada en `models.py` con métodos de autenticación y búsqueda.
 - `Compania.cs` → **Completado:** Clase `Compania` expandida en `models.py` con propiedades y métodos para obtener compañías.
-- `FuncionesTexbox.cs` → Módulo `utils.py` con validaciones de entrada.
-- `Inputbox.cs` → Utilidades para diálogos de entrada (usar `tkinter`).
+- `FuncionesTexbox.cs` → **Completado:** Funciones de validación agregadas en `utils.py`.
+- `Inputbox.cs` → **Completado:** Diálogo de entrada simple en `utils.py` (mejorable con Tkinter).
 
 **Mejoras:**
 
@@ -110,4 +110,4 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - **Riesgos:** Si encuentras dependencias complejas, prioriza funcionalidad core.
 - **Contacto:** Si necesitas ayuda en una fase específica, consulta este plan.
 
-**Estado Actual:** Fase 1 en progreso (ConexionBD.cs, globales.cs, UsuarioSistema.cs y Compania.cs completados).
+**Estado Actual:** Fase 1 completada. Listo para iniciar Fase 2.

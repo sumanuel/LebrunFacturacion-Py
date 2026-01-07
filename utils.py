@@ -29,25 +29,24 @@ def convertir_lista_a_lista_dict(lista: List[Any]) -> List[Dict[str, Any]]:
     return [vars(obj) for obj in lista]
 
 # Funciones de validación para campos de texto (basado en FuncionesTexbox.cs)
-def validar_numero(texto: str) -> bool:
-    """Valida si el texto es un número."""
-    try:
-        float(texto)
-        return True
-    except ValueError:
-        return False
+def validar_solo_decimales(texto: str) -> bool:
+    """Valida si el texto permite solo decimales (equivalente a txtOnlyDecimal)."""
+    if '.' in texto:
+        return texto.replace('.', '').replace('\b', '').replace('\r', '').isdigit()
+    else:
+        return texto.replace('.', '').replace('\b', '').replace('\r', '').isdigit()
 
-def validar_entero(texto: str) -> bool:
-    """Valida si el texto es un entero."""
-    try:
-        int(texto)
-        return True
-    except ValueError:
-        return False
+def validar_solo_numeros(texto: str) -> bool:
+    """Valida si el texto contiene solo números (equivalente a OnlyNumbers)."""
+    return texto.replace('\b', '').replace('\r', '').isdigit()
 
-def validar_email(texto: str) -> bool:
-    """Valida si el texto es un email básico."""
-    return '@' in texto and '.' in texto
+def validar_tab(texto: str) -> bool:
+    """Permite tabulación en enter (equivalente a tab)."""
+    return '\r' in texto  # En UI, manejar el evento
+
+def validar_solo_numeros_con_tab(texto: str) -> bool:
+    """Valida números con tabulación."""
+    return validar_solo_numeros(texto) or '\r' in texto
 
 # Diálogos de entrada (basado en Inputbox.cs)
 def input_box(prompt: str, title: str = "Entrada") -> str:
