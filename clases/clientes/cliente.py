@@ -154,4 +154,158 @@ class Cliente:
             logger.error(f"Error registrando cliente: {e}")
             return False
 
-    # Agregar más métodos según el archivo original (actualizar, eliminar, etc.)
+    def existe_cliente(self):
+        """Verifica si el cliente existe."""
+        query = "SELECT COUNT(*) as count FROM admclientes WHERE cli_codigo = %s;"
+        try:
+            results = self.db.ejecutar_query_ds(query, (self.codigo,))
+            return results[0]['count'] > 0 if results else False
+        except Exception as e:
+            logger.error(f"Error verificando existencia del cliente: {e}")
+            return False
+
+    def precio_cliente(self):
+        """Obtiene precios del cliente."""
+        query = "SELECT * FROM admprecioscliente WHERE pre_cli_codigo = %s;"
+        try:
+            return self.db.ejecutar_query_ds(query, (self.codigo,))
+        except Exception as e:
+            logger.error(f"Error obteniendo precios del cliente: {e}")
+            return []
+
+    def cargar_datos_cliente(self):
+        """Carga datos completos del cliente."""
+        query = """
+        SELECT * FROM admclientes WHERE cli_codigo = %s;
+        """
+        try:
+            results = self.db.ejecutar_query_ds(query, (self.codigo,))
+            if results:
+                row = results[0]
+                self.nombre = row.get('cli_nombre')
+                self.rif = row.get('cli_rif')
+                self.direccion = row.get('cli_direc1')
+                # Cargar más campos según necesidad
+            return results
+        except Exception as e:
+            logger.error(f"Error cargando datos del cliente: {e}")
+            return []
+
+    def condig_pag(self):
+        """Obtiene condición de pago del cliente."""
+        query = "SELECT cli_condipag FROM admclientes WHERE cli_codigo = %s;"
+        try:
+            results = self.db.ejecutar_query_ds(query, (self.codigo,))
+            return results[0]['cli_condipag'] if results else None
+        except Exception as e:
+            logger.error(f"Error obteniendo condición de pago: {e}")
+            return None
+
+    def modificar_cliente(self):
+        """Modifica datos del cliente."""
+        query = """
+        UPDATE admclientes SET cli_nombre=%s, cli_rif=%s, cli_vendedor=%s, cli_telefono=%s,
+        cli_direc1=%s, cli_tipoper=%s, cli_contribuyen=%s, cli_categoria=%s, cli_situacion=%s,
+        cli_condipag=%s, cli_divisa=%s, cli_descuento=%s, cli_credito=%s, cli_inivaca=%s,
+        cli_finvaca=%s WHERE cli_codigo=%s;
+        """
+        try:
+            self.db.sentencias_numero_filas(query, (
+                self.nombre, self.rif, self.vendedor, self.telefono, self.direccion,
+                self.tipo_persona, self.contribuyente, self.categoria, self.situacion,
+                self.condicion_pago, self.divisa_cliente, self.descuento_enventas,
+                self.limite_credito, self.fecha_inicio_vaca, self.fecha_fin_vaca, self.codigo
+            ))
+            logger.info(f"Cliente {self.codigo} modificado exitosamente.")
+            return True
+        except Exception as e:
+            logger.error(f"Error modificando cliente: {e}")
+            return False
+
+    def esta_activo(self, cod_cli):
+        """Verifica si el cliente está activo."""
+        query = "SELECT cli_situacion FROM admclientes WHERE cli_codigo = %s;"
+        try:
+            results = self.db.ejecutar_query_ds(query, (cod_cli,))
+            return results[0]['cli_situacion'] == 'A' if results else False
+        except Exception as e:
+            logger.error(f"Error verificando estado del cliente: {e}")
+            return False
+
+    def buscar_cliente_unico(self, codigo):
+        """Busca un cliente específico."""
+        query = "SELECT * FROM admclientes WHERE cli_codigo = %s;"
+        try:
+            return self.db.ejecutar_query_ds(query, (codigo,))
+        except Exception as e:
+            logger.error(f"Error buscando cliente único: {e}")
+            return []
+
+    def suspender_clientes(self, cliente):
+        """Suspende un cliente."""
+        query = "UPDATE admclientes SET cli_situacion = 'S' WHERE cli_codigo = %s;"
+        try:
+            self.db.sentencias_numero_filas(query, (cliente,))
+            logger.info(f"Cliente {cliente} suspendido.")
+        except Exception as e:
+            logger.error(f"Error suspendiendo cliente: {e}")
+            raise
+
+    def habilitar_cliente(self, cliente):
+        """Habilita un cliente."""
+        query = "UPDATE admclientes SET cli_situacion = 'A' WHERE cli_codigo = %s;"
+        try:
+            self.db.sentencias_numero_filas(query, (cliente,))
+            logger.info(f"Cliente {cliente} habilitado.")
+        except Exception as e:
+            logger.error(f"Error habilitando cliente: {e}")
+            raise
+
+    def actualizar_cuenta_ma(self, m, a):
+        """Actualiza cuenta manor y auxiliar."""
+        query = "UPDATE admclientes SET cli_cuentamanor = %s, cli_auxiliar = %s WHERE cli_codigo = %s;"
+        try:
+            self.db.sentencias_numero_filas(query, (m, a, self.codigo))
+            logger.info(f"Cuenta MA actualizada para cliente {self.codigo}.")
+        except Exception as e:
+            logger.error(f"Error actualizando cuenta MA: {e}")
+            raise
+
+    def limpiar_cliente(self):
+        """Limpia los datos del cliente."""
+        self.codigo = None
+        self.nombre = None
+        self.rif = None
+        # Limpiar más campos según necesidad
+
+    def documentos_vencidos(self):
+        """Verifica si el cliente tiene documentos vencidos."""
+        # Implementar lógica de verificación de documentos vencidos
+        # Por simplicidad, retornar False
+        return False
+
+    def saldo_actual_salcli(self, codigo_cliente, status):
+        """Obtiene saldo actual del cliente."""
+        query = """
+        SELECT SUM(sal_saldo) as saldo FROM admsaldoscli
+        WHERE sal_codigo = %s AND sal_status = %s;
+        """
+        try:
+            results = self.db.ejecutar_query_ds(query, (codigo_cliente, status))
+            return results[0]['saldo'] if results and results[0]['saldo'] else 0
+        except Exception as e:
+            logger.error(f"Error obteniendo saldo actual: {e}")
+            return 0
+
+    def saldo_vencido_salcli(self, codigo_cliente, status, fecha):
+        """Obtiene saldo vencido del cliente."""
+        query = """
+        SELECT SUM(sal_saldo) as saldo FROM admsaldoscli
+        WHERE sal_codigo = %s AND sal_status = %s AND sal_fecven < %s;
+        """
+        try:
+            results = self.db.ejecutar_query_ds(query, (codigo_cliente, status, fecha))
+            return results[0]['saldo'] if results and results[0]['saldo'] else 0
+        except Exception as e:
+            logger.error(f"Error obteniendo saldo vencido: {e}")
+            return 0
