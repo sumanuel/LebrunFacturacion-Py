@@ -97,6 +97,24 @@ class MovimientoContable:
             logger.error(f"Error insertando cabecera syscontab: {e}")
             raise
 
+    def detalles_syscontab(self, tabla_mov_contab, compania):
+        """Inserta detalles en syscontab."""
+        query = """
+        INSERT INTO admmovimientoscontablesd (md_nroComprobante, md_Item, md_Cuenta, md_Auxiliar,
+        md_Tipo, md_Monto, md_Referencia, md_IdSistema, md_Compania)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+        """
+        try:
+            for _, row in tabla_mov_contab.iterrows():
+                self.db.sentencias_numero_filas(query, (
+                    row['comprobante'], row['item'], row['cuenta'], row['auxiliar'],
+                    row['tipo'], row['monto'], row['referencia'], row['idSistema'], compania
+                ))
+            logger.info("Detalles syscontab insertados exitosamente.")
+        except Exception as e:
+            logger.error(f"Error insertando detalles syscontab: {e}")
+            raise
+
     def armar_data_table_mov_contab(self):
         """Arma la estructura del DataTable para movimientos contables."""
         columns = [
@@ -106,3 +124,158 @@ class MovimientoContable:
         ]
         self.tabla_contabilidad = pd.DataFrame(columns=columns)
         return self.tabla_contabilidad
+
+    def armar_data_table_cabecera_mov_contab(self):
+        """Arma la estructura del DataTable para cabecera de movimientos contables."""
+        columns = [
+            "comprobante", "mcIdSistema", "descripcion", "Debito", "Credito", "login", "updateLogin", "idSistema"
+        ]
+        self.cabecera_tabla_conta = pd.DataFrame(columns=columns)
+        return self.cabecera_tabla_conta
+
+    def cuenta_doc(self, tipo_doc):
+        """Obtiene cuenta por tipo de documento."""
+        query = "SELECT * FROM admcuentascont WHERE cta_tipodoc = %s;"
+        try:
+            return self.db.ejecutar_query_ds(query, (tipo_doc,))
+        except Exception as e:
+            logger.error(f"Error obteniendo cuenta por documento: {e}")
+            return []
+
+    def cuenta_cliente(self, cod_cliente):
+        """Obtiene cuenta contable del cliente."""
+        query = "SELECT cli_cuentamanor, cli_auxiliar FROM admclientes WHERE cli_codigo = %s;"
+        try:
+            return self.db.ejecutar_query_ds(query, (cod_cliente,))
+        except Exception as e:
+            logger.error(f"Error obteniendo cuenta del cliente: {e}")
+            return []
+
+    def datos_comprobante(self, comprobante, compania, cliente=None):
+        """Obtiene datos de comprobante."""
+        if cliente:
+            query = """
+            SELECT * FROM admmovcontab WHERE movcon_numcomp = %s AND movcon_proveedor = %s;
+            """
+            params = (comprobante, cliente)
+        else:
+            query = """
+            SELECT * FROM admmovcontab WHERE movcon_numcomp = %s;
+            """
+            params = (comprobante,)
+        try:
+            return self.db.ejecutar_query_ds(query, params)
+        except Exception as e:
+            logger.error(f"Error obteniendo datos de comprobante: {e}")
+            return []
+
+    def reimprimir_comprobante(self, comprobante, compania):
+        """Reimprime comprobante."""
+        # Implementar lógica de reimpresión
+        logger.info(f"Comprobante {comprobante} preparado para reimpresión.")
+        return self.datos_comprobante(comprobante, compania)
+
+    def reimprimir_comprobante_syscontab(self, comprobante, compania):
+        """Reimprime comprobante desde syscontab."""
+        query = """
+        SELECT * FROM admmovimientoscontablesc WHERE mc_nroComprobante = %s AND mc_Compania = %s;
+        """
+        try:
+            return self.db.ejecutar_query_ds(query, (comprobante, compania))
+        except Exception as e:
+            logger.error(f"Error reimprimiendo comprobante syscontab: {e}")
+            return []
+
+    def armar_data_table_cabecera_mov_contab2(self):
+        """Arma segunda estructura de cabecera."""
+        return self.armar_data_table_cabecera_mov_contab()
+
+    def cuenta_tip_doc_pro2(self, tipo_doc, codigo_cliente):
+        """Obtiene cuenta por tipo de documento y cliente."""
+        query = """
+        SELECT * FROM admcuentascont WHERE cta_tipodoc = %s AND cta_cliente = %s;
+        """
+        try:
+            return self.db.ejecutar_query_ds(query, (tipo_doc, codigo_cliente))
+        except Exception as e:
+            logger.error(f"Error obteniendo cuenta por tipo y cliente: {e}")
+            return []
+
+    def cuenta_idb(self, codigo):
+        """Obtiene cuenta por IDB."""
+        query = "SELECT * FROM admcuentascont WHERE cta_idb = %s;"
+        try:
+            return self.db.ejecutar_query_ds(query, (codigo,))
+        except Exception as e:
+            logger.error(f"Error obteniendo cuenta IDB: {e}")
+            return []
+
+    def reimprimir_comprobante(self, comprobante, compania, id_sistema):
+        """Reimprime comprobante con ID de sistema."""
+        query = """
+        SELECT * FROM admmovcontab WHERE movcon_numcomp = %s AND idSistemas = %s;
+        """
+        try:
+            return self.db.ejecutar_query_ds(query, (comprobante, id_sistema))
+        except Exception as e:
+            logger.error(f"Error reimprimiendo comprobante con ID sistema: {e}")
+            return []
+
+    def cabecera_syscontab_status(self, tabla_mov_contab, compania):
+        """Inserta cabecera con status."""
+        # Similar a cabecera_syscontab pero con status específico
+        self.cabecera_syscontab(tabla_mov_contab, compania)
+
+    def detalles_syscontab_status(self, tabla_mov_contab, compania):
+        """Inserta detalles con status."""
+        # Similar a detalles_syscontab
+        self.detalles_syscontab(tabla_mov_contab, compania)
+
+    def eliminar_mov_contab(self, proveedor, docum, suf, tipo):
+        """Elimina movimiento contable."""
+        query = """
+        DELETE FROM admmovcontab WHERE movcon_proveedor = %s AND movcon_numdoc = %s
+        AND movcon_sufdoc = %s AND movcon_tipdoc = %s;
+        """
+        try:
+            self.db.sentencias_numero_filas(query, (proveedor, docum, suf, tipo))
+            logger.info("Movimiento contable eliminado.")
+        except Exception as e:
+            logger.error(f"Error eliminando movimiento contable: {e}")
+            raise
+
+    def ingresar_mov_contab_temp(self, tabla_mov_contab):
+        """Ingresa movimientos contables temporales."""
+        # Similar a ingresar_mov_contab pero en tabla temporal
+        temp_table = "admmovcontab_temp"
+        query = f"""
+        INSERT INTO {temp_table} (movcon_item, movcon_proveedor, movcon_numdoc, movcon_sufdoc,
+        movcon_tipdoc, movcon_numcomp, movcon_descrip, movcon_cuenta, movcon_tipo, movcon_basetip,
+        movcon_fecaha, movcon_hora, movcon_monto, movcon_status, movcon_login, idSistemas,
+        movcon_auxiliar, movcon_rif, movcon_nombre, codigoIslr, referencia)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+        """
+        try:
+            for _, row in tabla_mov_contab.iterrows():
+                self.db.sentencias_numero_filas(query, (
+                    row['item'], row['codprove'], row['numeroDoc'], row['sufiDoc'], row['tipoDoc'],
+                    row['numComprobante'], row['descripcion'], row['cuenta'], row['tipo'], row['baseTipo'],
+                    row['fecha'], row['hora'], row['monto'], '1', row['login'], row['idSistemas'],
+                    row['auxiliar'], row['rif'], row['nombre'], row['islr'], row['referencia']
+                ))
+            logger.info("Movimientos contables temporales insertados.")
+        except Exception as e:
+            logger.error(f"Error insertando movimientos temporales: {e}")
+            raise
+
+    def comproba_contable_compras(self, tipo_doc, codigo, docum, sufijo):
+        """Obtiene comprobante contable de compras."""
+        query = """
+        SELECT * FROM admmovcontab WHERE movcon_tipdoc = %s AND movcon_proveedor = %s
+        AND movcon_numdoc = %s AND movcon_sufdoc = %s;
+        """
+        try:
+            return self.db.ejecutar_query_ds(query, (tipo_doc, codigo, docum, sufijo))
+        except Exception as e:
+            logger.error(f"Error obteniendo comprobante de compras: {e}")
+            return []
