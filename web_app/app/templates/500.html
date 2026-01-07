@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block title %}Error del servidor - {{ app_name }}{%
+endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="text-center mt-5">
+        <div class="error mx-auto" data-text="500">
+          <h1 class="display-1 text-danger">500</h1>
+        </div>
+        <p class="lead text-gray-800 mb-5">Error interno del servidor</p>
+        <p class="text-gray-500 mb-4">
+          Ha ocurrido un error inesperado. Nuestro equipo ha sido notificado.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <a
+            href="{{ url_for('dashboard.index') }}"
+            class="btn btn-primary btn-lg me-md-2"
+          >
+            <i class="fas fa-home"></i> Ir al Dashboard
+          </a>
+          <button
+            onclick="window.history.back()"
+            class="btn btn-outline-secondary btn-lg"
+          >
+            <i class="fas fa-arrow-left"></i> Volver atrás
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .error {
+    color: #5a5c69;
+    font-size: 7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
+    margin: 0 auto;
+  }
+
+  .error::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(45deg, #5a5c69 25%, transparent 25%),
+      -webkit-linear-gradient(-45deg, #5a5c69 25%, transparent 25%),
+      -webkit-linear-gradient(45deg, transparent 75%, #5a5c69 75%),
+      -webkit-linear-gradient(-45deg, transparent 75%, #5a5c69 75%);
+    background-size: 2px 2px;
+    background-position: 0 0, 0 1px, 1px -1px, -1px 0px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: -1;
+  }
+</style>
+{% endblock %}

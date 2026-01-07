@@ -1,0 +1,255 @@
+2026-01-07 17:59:10,859 - application - ERROR - Error creando tablas: (mysql.connector.errors.InterfaceError) 2003: Can't connect to MySQL server on 'localhost:3306' (10061 No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión)
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+2026-01-07 17:59:10,860 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 17:59:13,855 - application - ERROR - Error creando tablas: (mysql.connector.errors.InterfaceError) 2003: Can't connect to MySQL server on 'localhost:3306' (10061 No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión)
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+2026-01-07 17:59:13,865 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 17:59:26,109 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 17:59:26,110 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 17:59:28,814 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 17:59:28,814 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 17:59:29,536 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 17:59:29,537 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 17:59:59,293 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 17:59:59,294 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:00:42,388 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:00:42,389 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:00:43,179 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:00:43,180 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:01:47,934 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:01:47,934 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:01:53,154 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:01:53,154 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:01:53,903 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:01:53,904 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:02:49,863 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:02:49,864 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:02:50,631 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:02:50,632 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:01,968 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:01,968 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:07,903 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:07,905 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:08,850 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:08,851 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:14,847 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:14,848 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:30,979 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:30,980 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:35,242 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:35,243 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:36,030 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:04:36,031 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:04:40,682 - application - INFO - Request GET / took 0.01s
+2026-01-07 18:04:40,791 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:04:40,796 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:04:42,904 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:04:45,393 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 18:04:45,432 - application - INFO - Request GET /auth/login took 0.02s
+2026-01-07 18:04:45,484 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:04:45,484 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:05:03,181 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:05:03,181 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:05:10,301 - application - INFO - Request GET / took 0.02s
+2026-01-07 18:05:10,422 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:05:10,423 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 18:05:13,265 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 18:05:13,304 - application - INFO - Request GET /auth/login took 0.02s
+2026-01-07 18:05:13,351 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:05:13,351 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:05:29,074 - application - INFO - Request GET / took 0.00s
+2026-01-07 18:05:29,114 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:05:29,114 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:06:32,341 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 18:06:32,358 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:06:32,417 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:06:32,417 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:08:10,591 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:08:10,592 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:08:19,582 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:08:19,583 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:08:55,680 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:08:55,681 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:08:56,443 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:08:56,443 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:09:00,101 - application - INFO - Request GET / took 0.04s
+2026-01-07 18:09:00,214 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 18:09:00,225 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:09:01,337 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 18:09:01,377 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 18:09:01,433 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:09:01,433 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:11:18,385 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:11:18,386 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:11:47,830 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:11:47,832 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:12:00,694 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:12:00,695 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:12:36,974 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:12:36,975 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:12:37,752 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:12:37,754 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:12:44,899 - application - INFO - Request GET /auth/login took 0.05s
+2026-01-07 18:12:45,028 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 18:12:45,038 - application - INFO - Request GET /static/js/app.js took 0.09s
+2026-01-07 18:14:04,460 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:14:04,461 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:14:10,850 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:14:10,850 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:14:11,687 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:14:11,692 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:14:16,972 - application - INFO - Request GET /auth/login took 0.04s
+2026-01-07 18:14:17,100 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 18:14:17,100 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:15:07,571 - application - INFO - Request GET /auth/companies took 0.01s
+2026-01-07 18:15:16,872 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:15:16,873 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:15:21,900 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:15:28,597 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 18:15:56,423 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:15:56,424 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:15:57,201 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:15:57,201 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:15:59,158 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:15:59,273 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:15:59,294 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 18:16:07,161 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:16:07,162 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:16:07,212 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:16:07,213 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:16:11,015 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 18:16:11,123 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:16:11,132 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:16:12,245 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:16:57,727 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:16:57,742 - application - INFO - Request GET /.well-known/appspecific/com.chrome.devtools.json took 0.00s
+2026-01-07 18:17:36,541 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:18:03,679 - application - INFO - Request GET /auth/login took 0.01s
+2026-01-07 18:18:03,733 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:18:03,733 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:18:36,997 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:18:37,051 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:18:37,051 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:18:42,807 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:18:42,855 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:18:42,858 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:24:05,893 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:24:05,894 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:24:43,089 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:24:43,090 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:24:46,806 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:24:52,936 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:24:57,221 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:24:57,222 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:24:58,929 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:25:03,258 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:25:03,259 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:25:05,353 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:25:05,354 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:25:17,785 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:25:17,785 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:25:18,513 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:25:18,514 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:25:20,422 - application - INFO - Request GET /auth/login took 0.04s
+2026-01-07 18:25:20,553 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:25:20,561 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 18:25:44,451 - application - INFO - Request GET /auth/login took 0.01s
+2026-01-07 18:25:44,496 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:25:44,497 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:25:51,274 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:25:51,314 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:25:51,320 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:25:51,658 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:25:55,436 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:25:55,481 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:25:55,482 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:25:55,706 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:26:00,728 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:26:00,729 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:26:00,856 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:26:00,857 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:26:03,904 - application - INFO - Request GET /auth/login took 0.04s
+2026-01-07 18:26:04,014 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:26:04,023 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:26:04,191 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:27:56,031 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:27:56,034 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:27:56,034 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:28:06,318 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:28:06,319 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:28:07,193 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:28:07,194 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:28:51,542 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:28:51,542 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:28:51,543 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:28:51,544 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:28:51,545 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:28:51,545 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:30:18,710 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:30:18,710 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:30:19,621 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:30:19,622 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:30:25,041 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 18:30:25,170 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 18:30:25,183 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 18:30:26,015 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:30:34,810 - application - INFO - Request GET /auth/companies took 0.00s
+2026-01-07 18:30:38,394 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:31:04,076 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:12,714 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:12,716 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:12,730 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:12,732 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:12,736 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:12,743 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:14,516 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:17,896 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:17,898 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:17,915 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:17,918 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:17,957 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:17,958 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:20,091 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:26,157 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:31,887 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:37,134 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:37,135 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:38,061 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:38,064 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:38,067 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:38,068 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:39,394 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:43,329 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:43,329 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:43,330 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:43,331 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:43,377 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:43,377 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:44,973 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 18:31:53,524 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:53,525 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:53,532 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:53,533 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:31:53,548 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-01-07 18:31:53,549 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development

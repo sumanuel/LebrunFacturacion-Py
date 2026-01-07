@@ -1,0 +1,14 @@
+Flask==2.3.3
+Flask-Login==0.6.3
+Flask-WTF==1.1.1
+Flask-SQLAlchemy==3.0.5
+mysql-connector-python==8.1.0
+Werkzeug==2.3.7
+Jinja2==3.1.2
+python-dotenv==1.0.0
+# pandas==2.0.3  # Temporalmente comentado por problemas de compatibilidad con Python 3.13
+openpyxl==3.1.2
+reportlab==4.0.4
+bcrypt==4.0.1
+PyQt6==6.5.2
+PyQt6-WebEngine==6.5.0

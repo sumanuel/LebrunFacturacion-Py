@@ -1,0 +1,191 @@
+{% extends "base.html" %} {% block title %}Iniciar Sesión - {{ app_name }}{%
+endblock %} {% block content %}
+<div
+  class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-gradient"
+>
+  <div class="row w-100 justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-header bg-primary text-white text-center py-4">
+          <i class="fas fa-calculator fa-3x mb-3"></i>
+          <h3 class="card-title mb-0">{{ app_name }}</h3>
+          <p class="mb-0 opacity-75">Sistema de Facturación</p>
+        </div>
+
+        <div class="card-body p-4">
+          <form
+            method="POST"
+            action="{{ url_for('auth.login') }}"
+            id="loginForm"
+          >
+            {{ csrf_token() }}
+
+            <!-- Selección de Compañía -->
+            <div class="mb-3">
+              <label for="company" class="form-label">
+                <i class="fas fa-building"></i> Compañía
+              </label>
+              <select class="form-select" id="company" name="company" required>
+                <option value="">Seleccione una compañía...</option>
+                {% for company in companies %}
+                <option value="{{ company.codigo }}">
+                  {{ company.nombre }}
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <!-- Usuario -->
+            <div class="mb-3">
+              <label for="username" class="form-label">
+                <i class="fas fa-user"></i> Usuario
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="Ingrese su usuario"
+                required
+                autocomplete="username"
+              />
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-4">
+              <label for="password" class="form-label">
+                <i class="fas fa-lock"></i> Contraseña
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Ingrese su contraseña"
+                required
+                autocomplete="current-password"
+              />
+            </div>
+
+            <!-- Botones -->
+            <div class="d-grid gap-2">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                id="loginBtn"
+              >
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-footer text-center text-muted">
+          <small>
+            {{ app_name }} v{{ app_version }}<br />
+            &copy; {{ current_year }} Lebrun Development Team
+          </small>
+        </div>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="text-center mt-3">
+        <small class="text-muted">
+          Para soporte técnico contacte al administrador del sistema
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div
+    id="toast"
+    class="toast align-items-center text-white border-0"
+    role="alert"
+  >
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage"></div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+      ></button>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_scripts %}
+<script>
+  $(document).ready(function () {
+    // Auto-focus en el campo de usuario
+    $("#username").focus();
+
+    // Manejar envío del formulario
+    $("#loginForm").on("submit", function (e) {
+      $("#loginBtn")
+        .prop("disabled", true)
+        .html('<i class="fas fa-spinner fa-spin"></i> Iniciando...');
+    });
+
+    // Navegación con Enter
+    $("#username").on("keypress", function (e) {
+      if (e.which === 13) {
+        $("#password").focus();
+      }
+    });
+
+    $("#password").on("keypress", function (e) {
+      if (e.which === 13) {
+        $("#loginForm").submit();
+      }
+    });
+  });
+
+  // Función para mostrar toasts
+  function showToast(message, type = "info") {
+    const toast = $("#toast");
+    const toastMessage = $("#toastMessage");
+
+    // Remover clases anteriores
+    toast.removeClass(
+      "text-white bg-primary bg-success bg-danger bg-warning bg-info"
+    );
+
+    // Agregar clase según tipo
+    switch (type) {
+      case "success":
+        toast.addClass("bg-success");
+        break;
+      case "danger":
+      case "error":
+        toast.addClass("bg-danger");
+        break;
+      case "warning":
+        toast.addClass("bg-warning text-dark");
+        break;
+      default:
+        toast.addClass("bg-info");
+    }
+
+    toastMessage.text(message);
+    toast.toast({ delay: 5000 });
+    toast.toast("show");
+  }
+</script>
+{% endblock %} {% block extra_head %}
+<style>
+  .bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .toast-container {
+    z-index: 1060;
+  }
+</style>
+{% endblock %}

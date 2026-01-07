@@ -1,0 +1,341 @@
+/* Lebrun Facturación - Estilos Personalizados */
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Navbar personalizado */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Menú dinámico */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu .dropdown-item {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-item::after {
+  content: "▶";
+  position: absolute;
+  right: 10px;
+  font-size: 0.8em;
+  color: var(--secondary-color);
+}
+
+/* Submenu styling */
+.dropdown-menu.submenu {
+  min-width: 200px;
+}
+
+.dropdown-menu.submenu .dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu.submenu .dropdown-item i {
+  width: 20px;
+  margin-right: 8px;
+  text-align: center;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: var(--secondary-color);
+}
+
+.breadcrumb-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+
+/* Contenido principal */
+.main-content {
+  min-height: calc(100vh - 76px - 60px); /* Navbar + Footer */
+  padding: 2rem 0;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  border: none;
+  font-weight: 600;
+}
+
+/* Botones */
+.btn {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Formularios */
+.form-control {
+  border-radius: var(--border-radius);
+  border: 2px solid #e9ecef;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Tablas */
+.table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Alertas y notificaciones */
+.alert {
+  border-radius: var(--border-radius);
+  border: none;
+  font-weight: 500;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Loading spinner */
+.spinner-border {
+  color: var(--primary-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 200px;
+  }
+}
+
+/* Tema oscuro opcional */
+.dark-theme {
+  --light-color: #1a1a1a;
+  --dark-color: #ffffff;
+}
+
+.dark-theme body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.dark-theme .card {
+  background-color: #2d2d2d;
+  color: var(--dark-color);
+}
+
+.dark-theme .navbar {
+  background-color: #2d2d2d !important;
+}
+
+/* Estilos específicos para módulos */
+.facturacion-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.clientes-card {
+  border-left: 4px solid var(--success-color);
+}
+
+.bancos-card {
+  border-left: 4px solid var(--info-color);
+}
+
+.contabilidad-card {
+  border-left: 4px solid var(--warning-color);
+}
+
+/* Utilidades */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+.border-primary-custom {
+  border-color: var(--primary-color) !important;
+}
+
+/* Estilos para el dashboard */
+.dashboard-stats .card {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  color: white;
+}
+
+.dashboard-stats .card .card-body {
+  padding: 1.5rem;
+}
+
+.dashboard-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-stats .stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
