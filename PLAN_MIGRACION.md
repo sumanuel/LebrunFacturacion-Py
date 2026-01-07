@@ -14,6 +14,7 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - Mantener compatibilidad con la configuración existente (bases de datos MySQL).
 
 ## Estructura del Proyecto Migrado
+
 - `clasesData/` (equivalente a clasesData/ original):
   - `database.py`: Clase ConexionBD y funciones de BD.
   - `models.py`: Clases Usuario y Compania.
@@ -61,7 +62,7 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 
 **Archivos a Migrar:**
 
-- `bancos/` → Módulo `bancos.py` con clase `Banco` y métodos CRUD.
+- `bancos/` → **Completado:** Clase `Banco` en `clases/bancos/banco.py` con métodos CRUD y búsqueda.
 - `clientes/` → Módulo `clientes.py` con clase `Cliente`.
 - `complementos/` → Módulo `complementos.py` para funcionalidades adicionales.
 - `contabilidad/` → Módulo `contabilidad.py` para operaciones contables.
@@ -123,4 +124,4 @@ Este documento detalla el orden recomendado para migrar el proyecto de C# a Pyth
 - **Riesgos:** Si encuentras dependencias complejas, prioriza funcionalidad core.
 - **Contacto:** Si necesitas ayuda en una fase específica, consulta este plan.
 
-**Estado Actual:** Fase 1 completada. Listo para iniciar Fase 2.
+**Estado Actual:** Fase 2 en progreso (bancos completado).
