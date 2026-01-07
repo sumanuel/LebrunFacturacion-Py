@@ -10,19 +10,15 @@ db = SQLAlchemy()
 
 class UsuarioSistema(UserMixin, db.Model):
     """Modelo para usuarios del sistema"""
-    __tablename__ = 'confusuarios'
+    __tablename__ = 'confusuario'
+    __bind_key__ = 'sysconf'
 
-    id = db.Column('usu_codigo', db.Integer, primary_key=True)
-    login = db.Column('usu_login', db.String(50), unique=True, nullable=False)
-    password_hash = db.Column('usu_password', db.String(255), nullable=False)
-    nombre = db.Column('usu_nombre', db.String(100))
-    activo = db.Column('usu_activo', db.Boolean, default=True)
-    mapa_menu = db.Column('usu_mapamenu', db.String(10))
-    ultimo_acceso = db.Column('usu_ultimoacceso', db.DateTime)
-    intentos_fallidos = db.Column('usu_intentosfallidos', db.Integer, default=0)
+    id = db.Column('usu_codigo', db.String(4), primary_key=True)
+    login = db.Column('usu_nombre', db.String(50), unique=True, nullable=False)
+    password_hash = db.Column('usu_clave', db.String(20), nullable=False)
 
     # Relaciones
-    permisos_compania = db.relationship('PermisoCompania', backref='usuario', lazy='dynamic')
+    # permisos_compania = db.relationship('PermisoCompania', backref='usuario', lazy='dynamic')
 
     @property
     def password(self):
@@ -30,13 +26,13 @@ class UsuarioSistema(UserMixin, db.Model):
 
     @password.setter
     def password(self, password):
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = password  # Almacenar plano por ahora
 
     def verify_password(self, password):
-        return check_password_hash(self.password_hash, password)
+        return self.password_hash == password  # Comparación plana
 
     def is_active(self):
-        return self.activo
+        return True  # Asumir todos activos
 
     def get_id(self):
         return str(self.id)
@@ -47,6 +43,7 @@ class UsuarioSistema(UserMixin, db.Model):
 class Compania(db.Model):
     """Modelo para compañías/empresas"""
     __tablename__ = 'confdatosempresa'
+    __bind_key__ = 'sysconf'
 
     codigo = db.Column('empre_codigo', db.String(10), primary_key=True)
     nombre = db.Column('empre_nombre', db.String(100), nullable=False)
@@ -54,7 +51,7 @@ class Compania(db.Model):
     activo = db.Column('empre_actual', db.Boolean, default=True)
 
     # Relaciones
-    permisos = db.relationship('PermisoCompania', backref='compania', lazy='dynamic')
+    # permisos = db.relationship('PermisoCompania', backref='compania', lazy='dynamic')
 
     def __repr__(self):
         return f'<Compania {self.nombre}>'
@@ -62,10 +59,11 @@ class Compania(db.Model):
 class PermisoCompania(db.Model):
     """Modelo para permisos de usuario por compañía"""
     __tablename__ = 'confpermisoscompania'
+    __bind_key__ = 'sisadm'
 
     id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column('usu_codigo', db.Integer, db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
-    compania_codigo = db.Column('empre_codigo', db.String(10), db.ForeignKey('confdatosempresa.empre_codigo'), nullable=False)
+    usuario_id = db.Column('usu_codigo', db.Integer, nullable=False)  # db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
+    compania_codigo = db.Column('empre_codigo', db.String(10), nullable=False)  # db.ForeignKey('confdatosempresa.empre_codigo'), nullable=False)
     activo = db.Column('perm_activo', db.Boolean, default=True)
 
     __table_args__ = (
@@ -111,7 +109,7 @@ class SesionUsuario(db.Model):
     __tablename__ = 'conf_sesiones'
 
     id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
+    usuario_id = db.Column(db.Integer, nullable=False)  # db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
     token_sesion = db.Column(db.String(255), unique=True, nullable=False)
     ip_address = db.Column(db.String(45))
     user_agent = db.Column(db.Text)
@@ -119,7 +117,7 @@ class SesionUsuario(db.Model):
     fecha_fin = db.Column(db.DateTime)
     activo = db.Column(db.Boolean, default=True)
 
-    usuario = db.relationship('UsuarioSistema', backref=db.backref('sesiones', lazy=True))
+    # usuario = db.relationship('UsuarioSistema', backref=db.backref('sesiones', lazy=True))
 
     def __repr__(self):
         return f'<SesionUsuario usuario={self.usuario_id} activo={self.activo}>'

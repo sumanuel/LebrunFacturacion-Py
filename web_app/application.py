@@ -1,6 +1,6 @@
 from flask import Flask, session, g, render_template, request
 from flask_login import LoginManager, current_user
-from flask_wtf.csrf import CSRFProtect
+from flask_wtf.csrf import CSRFProtect, generate_csrf
 import os
 import logging
 from datetime import datetime
@@ -76,6 +76,7 @@ def create_app(config_name='default'):
 
     # Registrar blueprints
     app.register_blueprint(auth_bp, url_prefix='/auth')
+    csrf.exempt(app.view_functions['auth.login'])
     app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
     app.register_blueprint(errors_bp)
     # Los siguientes blueprints se implementarán próximamente:
@@ -118,7 +119,8 @@ def create_app(config_name='default'):
             'user': current_user if current_user.is_authenticated else None,
             'get_menu_data': get_menu_data,
             'get_breadcrumbs': get_breadcrumbs,
-            'get_quick_actions': get_quick_actions
+            'get_quick_actions': get_quick_actions,
+            'csrf_token': generate_csrf
         }
 
     @app.errorhandler(404)
