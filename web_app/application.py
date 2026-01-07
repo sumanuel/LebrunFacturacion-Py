@@ -147,7 +147,7 @@ def create_app(config_name='default'):
     if config_name == 'development':
         with app.app_context():
             try:
-                db.create_all()
+                # db.create_all()  # Comentado porque las tablas ya existen en la DB real
                 app.logger.info('Tablas de base de datos creadas/verficadas')
             except Exception as e:
                 app.logger.error(f'Error creando tablas: {str(e)}')

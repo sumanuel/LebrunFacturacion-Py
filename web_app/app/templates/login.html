@@ -18,7 +18,6 @@ endblock %} {% block content %}
             action="{{ url_for('auth.login') }}"
             id="loginForm"
           >
-            {{ csrf_token() }}
 
             <!-- Selección de Compañía -->
             <div class="mb-3">

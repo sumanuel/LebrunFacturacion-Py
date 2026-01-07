@@ -253,3 +253,96 @@
 2026-01-07 18:31:53,548 - application - ERROR - Error creando tablas: (mysql.connector.errors.ProgrammingError) 1049 (42000): Unknown database 'lebrun'
 (Background on this error at: https://sqlalche.me/e/20/f405)
 2026-01-07 18:31:53,549 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:32:54,835 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 18:32:54,958 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 18:32:54,964 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:33:05,409 - application - ERROR - Error creando tablas: (mysql.connector.errors.DatabaseError) 1005 (HY000): Can't create table `sysconf`.`confpermisoscompania` (errno: 150 "Foreign key constraint is incorrectly formed")
+[SQL: 
+CREATE TABLE confpermisoscompania (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	usu_codigo INTEGER NOT NULL, 
+	empre_codigo VARCHAR(10) NOT NULL, 
+	perm_activo BOOL, 
+	PRIMARY KEY (id), 
+	CONSTRAINT unique_usuario_compania UNIQUE (usu_codigo, empre_codigo), 
+	FOREIGN KEY(usu_codigo) REFERENCES confusuarios (usu_codigo), 
+	FOREIGN KEY(empre_codigo) REFERENCES confdatosempresa (empre_codigo)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-01-07 18:33:05,411 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:33:06,278 - application - ERROR - Error creando tablas: (mysql.connector.errors.DatabaseError) 1005 (HY000): Can't create table `sysconf`.`confpermisoscompania` (errno: 150 "Foreign key constraint is incorrectly formed")
+[SQL: 
+CREATE TABLE confpermisoscompania (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	usu_codigo INTEGER NOT NULL, 
+	empre_codigo VARCHAR(10) NOT NULL, 
+	perm_activo BOOL, 
+	PRIMARY KEY (id), 
+	CONSTRAINT unique_usuario_compania UNIQUE (usu_codigo, empre_codigo), 
+	FOREIGN KEY(usu_codigo) REFERENCES confusuarios (usu_codigo), 
+	FOREIGN KEY(empre_codigo) REFERENCES confdatosempresa (empre_codigo)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2026-01-07 18:33:06,279 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:33:09,290 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:33:09,341 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:33:09,341 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:33:13,879 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:33:13,923 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:33:13,923 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:33:14,480 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:34:02,496 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:02,497 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:02,498 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:02,498 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:02,524 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:02,525 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:07,223 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:07,224 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:08,081 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:08,081 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:14,218 - application - INFO - Request GET /auth/login took 0.08s
+2026-01-07 18:34:14,329 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:34:14,348 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 18:34:43,534 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:43,535 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:44,384 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:34:44,385 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:34:47,937 - application - INFO - Request GET /auth/login took 0.08s
+2026-01-07 18:34:48,059 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 18:34:48,064 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:35:01,261 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:35:01,324 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:35:01,325 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:35:01,597 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:35:16,310 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:35:16,312 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:35:17,250 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:35:17,254 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:35:21,316 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 18:35:21,316 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 18:35:26,384 - application - INFO - Request GET /auth/login took 0.08s
+2026-01-07 18:35:26,487 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 18:35:26,507 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 18:35:26,655 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:35:58,968 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:35:59,014 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:35:59,015 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:35:59,337 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 18:36:10,660 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:36:10,704 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:36:10,715 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:36:23,198 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 18:36:23,251 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:36:23,251 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:36:25,471 - application - INFO - Request GET /auth/login took 0.01s
+2026-01-07 18:36:25,518 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:36:25,518 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:37:26,947 - application - INFO - Request GET /auth/login took 0.02s
+2026-01-07 18:37:26,989 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 18:37:26,991 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 18:37:27,656 - application - INFO - Request GET /favicon.ico took 0.00s

@@ -22,7 +22,7 @@ class UsuarioSistema(UserMixin, db.Model):
     intentos_fallidos = db.Column('usu_intentosfallidos', db.Integer, default=0)
 
     # Relaciones
-    permisos_compania = db.relationship('PermisoCompania', backref='usuario', lazy=True)
+    permisos_compania = db.relationship('PermisoCompania', backref='usuario', lazy='dynamic')
 
     @property
     def password(self):
@@ -54,7 +54,7 @@ class Compania(db.Model):
     activo = db.Column('empre_actual', db.Boolean, default=True)
 
     # Relaciones
-    permisos = db.relationship('PermisoCompania', backref='compania', lazy=True)
+    permisos = db.relationship('PermisoCompania', backref='compania', lazy='dynamic')
 
     def __repr__(self):
         return f'<Compania {self.nombre}>'
