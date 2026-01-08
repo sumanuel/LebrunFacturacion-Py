@@ -1,8 +1,5 @@
-{% extends "base.html" %}
-
-{% block title %}Nueva Factura - {{ app_name }}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Nueva Factura - {{ app_name }}{%
+endblock %} {% block content %}
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
@@ -17,8 +14,15 @@
             <!-- Información General -->
             <div class="row mb-4">
               <div class="col-md-3">
-                <label for="tipoDocumento" class="form-label">Tipo Documento</label>
-                <select class="form-select" id="tipoDocumento" name="tipoDocumento" required>
+                <label for="tipoDocumento" class="form-label"
+                  >Tipo Documento</label
+                >
+                <select
+                  class="form-select"
+                  id="tipoDocumento"
+                  name="tipoDocumento"
+                  required
+                >
                   <option value="FAV">Factura de Venta</option>
                   <option value="DEV">Devolución</option>
                   <option value="NDE">Nota de Débito</option>
@@ -26,87 +30,169 @@
               </div>
               <div class="col-md-3">
                 <label for="correlativo" class="form-label">N° Factura</label>
-                <input type="text" class="form-control" id="correlativo" name="correlativo" readonly>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="correlativo"
+                  name="correlativo"
+                  readonly
+                />
               </div>
               <div class="col-md-3">
                 <label for="fecha" class="form-label">Fecha</label>
-                <input type="date" class="form-control" id="fecha" name="fecha" value="{{ fecha_actual }}" required>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="fecha"
+                  name="fecha"
+                  value="{{ fecha_actual }}"
+                  required
+                />
               </div>
               <div class="col-md-3">
                 <label for="hora" class="form-label">Hora</label>
-                <input type="time" class="form-control" id="hora" name="hora" readonly>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="hora"
+                  name="hora"
+                  readonly
+                />
               </div>
             </div>
 
             <!-- Información del Cliente -->
             <div class="row mb-4">
               <div class="col-md-12">
-                <h5 class="text-primary"><i class="fas fa-user"></i> Información del Cliente</h5>
+                <h5 class="text-primary">
+                  <i class="fas fa-user"></i> Información del Cliente
+                </h5>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-md-2">
                 <label for="codCliente" class="form-label">Código</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="codCliente" name="codCliente" maxlength="20">
-                  <button class="btn btn-outline-secondary" type="button" id="btnBuscarCliente">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codCliente"
+                    name="codCliente"
+                    maxlength="20"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="btnBuscarCliente"
+                  >
                     <i class="fas fa-search"></i>
                   </button>
                 </div>
               </div>
               <div class="col-md-4">
-                <label for="nombreCliente" class="form-label">Nombre/Razón Social</label>
-                <input type="text" class="form-control" id="nombreCliente" name="nombreCliente" readonly>
+                <label for="nombreCliente" class="form-label"
+                  >Nombre/Razón Social</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreCliente"
+                  name="nombreCliente"
+                  readonly
+                />
               </div>
               <div class="col-md-3">
                 <label for="rifCliente" class="form-label">RIF</label>
-                <input type="text" class="form-control" id="rifCliente" name="rifCliente" readonly>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rifCliente"
+                  name="rifCliente"
+                  readonly
+                />
               </div>
               <div class="col-md-3">
                 <label for="telefonoCliente" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="telefonoCliente" name="telefonoCliente" readonly>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefonoCliente"
+                  name="telefonoCliente"
+                  readonly
+                />
               </div>
             </div>
 
             <!-- Información del Vendedor -->
             <div class="row mb-4">
               <div class="col-md-12">
-                <h5 class="text-primary"><i class="fas fa-user-tie"></i> Información del Vendedor</h5>
+                <h5 class="text-primary">
+                  <i class="fas fa-user-tie"></i> Información del Vendedor
+                </h5>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-md-2">
                 <label for="codVendedor" class="form-label">Código</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="codVendedor" name="codVendedor" maxlength="4">
-                  <button class="btn btn-outline-secondary" type="button" id="btnBuscarVendedor">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codVendedor"
+                    name="codVendedor"
+                    maxlength="4"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="btnBuscarVendedor"
+                  >
                     <i class="fas fa-search"></i>
                   </button>
                 </div>
               </div>
               <div class="col-md-4">
                 <label for="nombreVendedor" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreVendedor" name="nombreVendedor" readonly>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreVendedor"
+                  name="nombreVendedor"
+                  readonly
+                />
               </div>
             </div>
 
             <!-- Condiciones de Pago -->
             <div class="row mb-4">
               <div class="col-md-12">
-                <h5 class="text-primary"><i class="fas fa-credit-card"></i> Condiciones de Pago</h5>
+                <h5 class="text-primary">
+                  <i class="fas fa-credit-card"></i> Condiciones de Pago
+                </h5>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-md-3">
                 <label for="condicionPago" class="form-label">Condición</label>
-                <select class="form-select" id="condicionPago" name="condicionPago">
+                <select
+                  class="form-select"
+                  id="condicionPago"
+                  name="condicionPago"
+                >
                   <option value="CONTADO">Contado</option>
                   <option value="CREDITO">Crédito</option>
                 </select>
               </div>
               <div class="col-md-3">
                 <label for="plazoDias" class="form-label">Días Plazo</label>
-                <input type="number" class="form-control" id="plazoDias" name="plazoDias" min="0" value="0">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="plazoDias"
+                  name="plazoDias"
+                  min="0"
+                  value="0"
+                />
               </div>
               <div class="col-md-3">
                 <label for="divisa" class="form-label">Divisa</label>
@@ -116,15 +202,28 @@
                 </select>
               </div>
               <div class="col-md-3">
-                <label for="descuentoGeneral" class="form-label">Descuento General (%)</label>
-                <input type="number" class="form-control" id="descuentoGeneral" name="descuentoGeneral" min="0" max="100" step="0.01" value="0">
+                <label for="descuentoGeneral" class="form-label"
+                  >Descuento General (%)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="descuentoGeneral"
+                  name="descuentoGeneral"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                  value="0"
+                />
               </div>
             </div>
 
             <!-- Productos -->
             <div class="row mb-4">
               <div class="col-md-12">
-                <h5 class="text-primary"><i class="fas fa-boxes"></i> Artículos</h5>
+                <h5 class="text-primary">
+                  <i class="fas fa-boxes"></i> Artículos
+                </h5>
               </div>
             </div>
 
@@ -135,38 +234,104 @@
                   <div class="col-md-2">
                     <label for="codProducto" class="form-label">Código</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" id="codProducto" name="codProducto" maxlength="20">
-                      <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="codProducto"
+                        name="codProducto"
+                        maxlength="20"
+                      />
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        id="btnBuscarProducto"
+                      >
                         <i class="fas fa-search"></i>
                       </button>
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <label for="nombreProducto" class="form-label">Descripción</label>
-                    <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" readonly>
+                    <label for="nombreProducto" class="form-label"
+                      >Descripción</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombreProducto"
+                      name="nombreProducto"
+                      readonly
+                    />
                   </div>
                   <div class="col-md-1">
-                    <label for="unidadProducto" class="form-label">Unidad</label>
-                    <input type="text" class="form-control" id="unidadProducto" name="unidadProducto" readonly>
+                    <label for="unidadProducto" class="form-label"
+                      >Unidad</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="unidadProducto"
+                      name="unidadProducto"
+                      readonly
+                    />
                   </div>
                   <div class="col-md-1">
-                    <label for="cantidadProducto" class="form-label">Cant.</label>
-                    <input type="number" class="form-control" id="cantidadProducto" name="cantidadProducto" min="0" step="0.01">
+                    <label for="cantidadProducto" class="form-label"
+                      >Cant.</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="cantidadProducto"
+                      name="cantidadProducto"
+                      min="0"
+                      step="0.01"
+                    />
                   </div>
                   <div class="col-md-2">
-                    <label for="precioProducto" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="precioProducto" name="precioProducto" min="0" step="0.01" readonly>
+                    <label for="precioProducto" class="form-label"
+                      >Precio</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="precioProducto"
+                      name="precioProducto"
+                      min="0"
+                      step="0.01"
+                      readonly
+                    />
                   </div>
                   <div class="col-md-1">
-                    <label for="descuentoProducto" class="form-label">Desc.%</label>
-                    <input type="number" class="form-control" id="descuentoProducto" name="descuentoProducto" min="0" max="100" step="0.01" value="0">
+                    <label for="descuentoProducto" class="form-label"
+                      >Desc.%</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="descuentoProducto"
+                      name="descuentoProducto"
+                      min="0"
+                      max="100"
+                      step="0.01"
+                      value="0"
+                    />
                   </div>
                   <div class="col-md-1">
                     <label for="totalProducto" class="form-label">Total</label>
-                    <input type="number" class="form-control" id="totalProducto" name="totalProducto" readonly>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="totalProducto"
+                      name="totalProducto"
+                      readonly
+                    />
                   </div>
                   <div class="col-md-1 d-flex align-items-end">
-                    <button type="button" class="btn btn-success" id="btnAgregarProducto">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="btnAgregarProducto"
+                    >
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
@@ -213,10 +378,12 @@
                       <div class="col-6">Descuento:</div>
                       <div class="col-6 text-end" id="descuentoTotal">0.00</div>
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
                       <div class="col-6"><strong>Total:</strong></div>
-                      <div class="col-6 text-end"><strong id="totalFactura">0.00</strong></div>
+                      <div class="col-6 text-end">
+                        <strong id="totalFactura">0.00</strong>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -226,16 +393,31 @@
             <!-- Botones de acción -->
             <div class="row mt-4">
               <div class="col-12 text-center">
-                <button type="button" class="btn btn-success me-2" id="btnGuardar">
+                <button
+                  type="button"
+                  class="btn btn-success me-2"
+                  id="btnGuardar"
+                >
                   <i class="fas fa-save"></i> Guardar Factura
                 </button>
-                <button type="button" class="btn btn-primary me-2" id="btnImprimir">
+                <button
+                  type="button"
+                  class="btn btn-primary me-2"
+                  id="btnImprimir"
+                >
                   <i class="fas fa-print"></i> Guardar e Imprimir
                 </button>
-                <button type="button" class="btn btn-secondary me-2" id="btnLimpiar">
+                <button
+                  type="button"
+                  class="btn btn-secondary me-2"
+                  id="btnLimpiar"
+                >
                   <i class="fas fa-eraser"></i> Limpiar
                 </button>
-                <a href="{{ url_for('facturacion.lista_facturas') }}" class="btn btn-outline-secondary">
+                <a
+                  href="{{ url_for('facturacion.lista_facturas') }}"
+                  class="btn btn-outline-secondary"
+                >
                   <i class="fas fa-arrow-left"></i> Volver
                 </a>
               </div>
@@ -253,12 +435,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Buscar Cliente</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="buscarCliente" placeholder="Buscar por código o nombre...">
-          <button class="btn btn-outline-secondary" type="button" id="btnBuscarClienteModal">
+          <input
+            type="text"
+            class="form-control"
+            id="buscarCliente"
+            placeholder="Buscar por código o nombre..."
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="btnBuscarClienteModal"
+          >
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -288,12 +483,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Buscar Vendedor</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="buscarVendedor" placeholder="Buscar por código o nombre...">
-          <button class="btn btn-outline-secondary" type="button" id="btnBuscarVendedorModal">
+          <input
+            type="text"
+            class="form-control"
+            id="buscarVendedor"
+            placeholder="Buscar por código o nombre..."
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="btnBuscarVendedorModal"
+          >
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -321,12 +529,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Buscar Producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="buscarProducto" placeholder="Buscar por código o descripción...">
-          <button class="btn btn-outline-secondary" type="button" id="btnBuscarProductoModal">
+          <input
+            type="text"
+            class="form-control"
+            id="buscarProducto"
+            placeholder="Buscar por código o descripción..."
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="btnBuscarProductoModal"
+          >
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -350,217 +571,238 @@
     </div>
   </div>
 </div>
-{% endblock %}
-
-{% block extra_scripts %}
+{% endblock %} {% block extra_scripts %}
 <script>
-$(document).ready(function() {
+  $(document).ready(function () {
     // Establecer fecha y hora actual
     const now = new Date();
-    const fechaActual = now.toISOString().split('T')[0];
-    const horaActual = now.toTimeString().split(' ')[0].substring(0, 5);
+    const fechaActual = now.toISOString().split("T")[0];
+    const horaActual = now.toTimeString().split(" ")[0].substring(0, 5);
 
-    $('#fecha').val(fechaActual);
-    $('#hora').val(horaActual);
+    $("#fecha").val(fechaActual);
+    $("#hora").val(horaActual);
 
     // Funcionalidad de búsqueda de cliente
-    $('#btnBuscarCliente').click(function() {
-        $('#modalBuscarCliente').modal('show');
-        cargarClientes();
+    $("#btnBuscarCliente").click(function () {
+      $("#modalBuscarCliente").modal("show");
+      cargarClientes();
     });
 
     // Funcionalidad de búsqueda en el modal de clientes
-    $('#btnBuscarClienteModal').click(function() {
-        const termino = $('#buscarCliente').val().trim();
-        buscarClientes(termino);
+    $("#btnBuscarClienteModal").click(function () {
+      const termino = $("#buscarCliente").val().trim();
+      buscarClientes(termino);
     });
 
-    $('#buscarCliente').keypress(function(e) {
-        if (e.which === 13) {
-            const termino = $(this).val().trim();
-            buscarClientes(termino);
-        }
+    $("#buscarCliente").keypress(function (e) {
+      if (e.which === 13) {
+        const termino = $(this).val().trim();
+        buscarClientes(termino);
+      }
     });
 
     // Limpiar búsqueda cuando se abre el modal
-    $('#modalBuscarCliente').on('shown.bs.modal', function() {
-        $('#buscarCliente').val('').focus();
+    $("#modalBuscarCliente").on("shown.bs.modal", function () {
+      $("#buscarCliente").val("").focus();
     });
 
-    $('#codCliente').keypress(function(e) {
-        if (e.which === 13) {
-            buscarClientePorCodigo($(this).val());
-        }
+    $("#codCliente").keypress(function (e) {
+      if (e.which === 13) {
+        buscarClientePorCodigo($(this).val());
+      }
     });
 
     // Funcionalidad de búsqueda de vendedor
-    $('#btnBuscarVendedor').click(function() {
-        $('#modalBuscarVendedor').modal('show');
-        cargarVendedores();
+    $("#btnBuscarVendedor").click(function () {
+      $("#modalBuscarVendedor").modal("show");
+      cargarVendedores();
     });
 
-    $('#codVendedor').keypress(function(e) {
-        if (e.which === 13) {
-            buscarVendedorPorCodigo($(this).val());
-        }
+    $("#codVendedor").keypress(function (e) {
+      if (e.which === 13) {
+        buscarVendedorPorCodigo($(this).val());
+      }
     });
 
     // Funcionalidad de búsqueda de producto
-    $('#btnBuscarProducto').click(function() {
-        $('#modalBuscarProducto').modal('show');
-        cargarProductos();
+    $("#btnBuscarProducto").click(function () {
+      $("#modalBuscarProducto").modal("show");
+      cargarProductos();
     });
 
-    $('#codProducto').keypress(function(e) {
-        if (e.which === 13) {
-            buscarProductoPorCodigo($(this).val());
-        }
+    $("#codProducto").keypress(function (e) {
+      if (e.which === 13) {
+        buscarProductoPorCodigo($(this).val());
+      }
     });
 
     // Calcular total del producto
-    $('#cantidadProducto, #precioProducto, #descuentoProducto').on('input', function() {
+    $("#cantidadProducto, #precioProducto, #descuentoProducto").on(
+      "input",
+      function () {
         calcularTotalProducto();
-    });
+      }
+    );
 
     // Agregar producto a la tabla
-    $('#btnAgregarProducto').click(function() {
-        agregarProductoATabla();
+    $("#btnAgregarProducto").click(function () {
+      agregarProductoATabla();
     });
 
     // Limpiar formulario
-    $('#btnLimpiar').click(function() {
-        if (confirm('¿Está seguro de limpiar todo el formulario?')) {
-            location.reload();
-        }
+    $("#btnLimpiar").click(function () {
+      if (confirm("¿Está seguro de limpiar todo el formulario?")) {
+        location.reload();
+      }
     });
-});
+  });
 
-// Funciones auxiliares
-function cargarClientes() {
+  // Funciones auxiliares
+  function cargarClientes() {
     // Cargar lista inicial de clientes desde la API
     $.ajax({
-        url: '/facturacion/api/clientes',
-        method: 'GET',
-        success: function(data) {
-            mostrarClientesEnTabla(data.clientes);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error al cargar clientes:', error);
-            alert('Error al cargar la lista de clientes');
-        }
+      url: "/facturacion/api/clientes",
+      method: "GET",
+      success: function (data) {
+        mostrarClientesEnTabla(data.clientes);
+      },
+      error: function (xhr, status, error) {
+        console.error("Error al cargar clientes:", error);
+        alert("Error al cargar la lista de clientes");
+      },
     });
-}
+  }
 
-function buscarClientes(termino) {
-    if (!termino || termino.trim() === '') {
-        // Si no hay término de búsqueda, cargar lista completa
-        cargarClientes();
-        return;
+  function buscarClientes(termino) {
+    if (!termino || termino.trim() === "") {
+      // Si no hay término de búsqueda, cargar lista completa
+      cargarClientes();
+      return;
     }
-    
+
     // Buscar clientes por término
     $.ajax({
-        url: '/facturacion/api/clientes/buscar',
-        method: 'GET',
-        data: { q: termino },
-        success: function(data) {
-            mostrarClientesEnTabla(data.clientes);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error al buscar clientes:', error);
-            alert('Error al buscar clientes');
-        }
+      url: "/facturacion/api/clientes/buscar",
+      method: "GET",
+      data: { q: termino },
+      success: function (data) {
+        mostrarClientesEnTabla(data.clientes);
+      },
+      error: function (xhr, status, error) {
+        console.error("Error al buscar clientes:", error);
+        alert("Error al buscar clientes");
+      },
     });
-}
+  }
 
-function mostrarClientesEnTabla(clientes) {
-    let html = '';
-    clientes.forEach(cliente => {
-        // Escapar comillas simples en los valores para evitar errores JavaScript
-        const codigo = cliente.codigo || '';
-        const nombre = (cliente.nombre || '').replace(/'/g, "\\'");
-        const rif = cliente.rif || '';
-        const categoria = cliente.categoria || '';
-        
-        html += `
+  function mostrarClientesEnTabla(clientes) {
+    let html = "";
+    clientes.forEach((cliente) => {
+      // Escapar comillas simples en los valores para evitar errores JavaScript
+      const codigo = cliente.codigo || "";
+      const nombre = (cliente.nombre || "").replace(/'/g, "\\'");
+      const rif = cliente.rif || "";
+      const categoria = cliente.categoria || "";
+
+      html += `
             <tr onclick="seleccionarCliente('${codigo}', '${nombre}', '${rif}', '')">
                 <td>${codigo}</td>
-                <td>${cliente.nombre || ''}</td>
+                <td>${cliente.nombre || ""}</td>
                 <td>${rif}</td>
                 <td>${categoria}</td>
             </tr>
         `;
     });
-    
+
     if (clientes.length === 0) {
-        html = '<tr><td colspan="4" class="text-center text-muted">No se encontraron clientes</td></tr>';
+      html =
+        '<tr><td colspan="4" class="text-center text-muted">No se encontraron clientes</td></tr>';
     }
-    
-    $('#clientesBody').html(html);
-}
 
-function seleccionarCliente(codigo, nombre, rif, telefono) {
-    $('#codCliente').val(codigo);
-    $('#nombreCliente').val(nombre);
-    $('#rifCliente').val(rif);
-    $('#telefonoCliente').val(telefono || ''); // Campo telefono no disponible en la API
-    $('#modalBuscarCliente').modal('hide');
-}
+    $("#clientesBody").html(html);
+  }
 
-function buscarClientePorCodigo(codigo) {
+  function seleccionarCliente(codigo, nombre, rif, telefono) {
+    $("#codCliente").val(codigo);
+    $("#nombreCliente").val(nombre);
+    $("#rifCliente").val(rif);
+    $("#telefonoCliente").val(telefono || ""); // Campo telefono no disponible en la API
+    $("#modalBuscarCliente").modal("hide");
+  }
+
+  function buscarClientePorCodigo(codigo) {
     // Simulación de búsqueda por código
-    if (codigo === '0001') {
-        seleccionarCliente('0001', 'Cliente Ejemplo 1', 'J-12345678-9', '0212-1234567');
+    if (codigo === "0001") {
+      seleccionarCliente(
+        "0001",
+        "Cliente Ejemplo 1",
+        "J-12345678-9",
+        "0212-1234567"
+      );
     } else {
-        alert('Cliente no encontrado');
+      alert("Cliente no encontrado");
     }
-}
+  }
 
-function cargarVendedores() {
+  function cargarVendedores() {
     // Simulación de carga de vendedores
     const vendedores = [
-        {codigo: '0001', nombre: 'Vendedor Ejemplo 1'},
-        {codigo: '0002', nombre: 'Vendedor Ejemplo 2'}
+      { codigo: "0001", nombre: "Vendedor Ejemplo 1" },
+      { codigo: "0002", nombre: "Vendedor Ejemplo 2" },
     ];
 
-    let html = '';
-    vendedores.forEach(vendedor => {
-        html += `
+    let html = "";
+    vendedores.forEach((vendedor) => {
+      html += `
             <tr onclick="seleccionarVendedor('${vendedor.codigo}', '${vendedor.nombre}')">
                 <td>${vendedor.codigo}</td>
                 <td>${vendedor.nombre}</td>
             </tr>
         `;
     });
-    $('#vendedoresBody').html(html);
-}
+    $("#vendedoresBody").html(html);
+  }
 
-function seleccionarVendedor(codigo, nombre) {
-    $('#codVendedor').val(codigo);
-    $('#nombreVendedor').val(nombre);
-    $('#modalBuscarVendedor').modal('hide');
-}
+  function seleccionarVendedor(codigo, nombre) {
+    $("#codVendedor").val(codigo);
+    $("#nombreVendedor").val(nombre);
+    $("#modalBuscarVendedor").modal("hide");
+  }
 
-function buscarVendedorPorCodigo(codigo) {
+  function buscarVendedorPorCodigo(codigo) {
     // Simulación de búsqueda por código
-    if (codigo === '0001') {
-        seleccionarVendedor('0001', 'Vendedor Ejemplo 1');
+    if (codigo === "0001") {
+      seleccionarVendedor("0001", "Vendedor Ejemplo 1");
     } else {
-        alert('Vendedor no encontrado');
+      alert("Vendedor no encontrado");
     }
-}
+  }
 
-function cargarProductos() {
+  function cargarProductos() {
     // Simulación de carga de productos
     const productos = [
-        {codigo: 'PROD001', descripcion: 'Producto Ejemplo 1', unidad: 'UND', precio: 100.00, stock: 50},
-        {codigo: 'PROD002', descripcion: 'Producto Ejemplo 2', unidad: 'KG', precio: 200.00, stock: 25}
+      {
+        codigo: "PROD001",
+        descripcion: "Producto Ejemplo 1",
+        unidad: "UND",
+        precio: 100.0,
+        stock: 50,
+      },
+      {
+        codigo: "PROD002",
+        descripcion: "Producto Ejemplo 2",
+        unidad: "KG",
+        precio: 200.0,
+        stock: 25,
+      },
     ];
 
-    let html = '';
-    productos.forEach(producto => {
-        html += `
-            <tr onclick="seleccionarProducto('${producto.codigo}', '${producto.descripcion}', '${producto.unidad}', ${producto.precio})">
+    let html = "";
+    productos.forEach((producto) => {
+      html += `
+            <tr onclick="seleccionarProducto('${producto.codigo}', '${
+        producto.descripcion
+      }', '${producto.unidad}', ${producto.precio})">
                 <td>${producto.codigo}</td>
                 <td>${producto.descripcion}</td>
                 <td>${producto.unidad}</td>
@@ -569,51 +811,51 @@ function cargarProductos() {
             </tr>
         `;
     });
-    $('#productosModalBody').html(html);
-}
+    $("#productosModalBody").html(html);
+  }
 
-function seleccionarProducto(codigo, descripcion, unidad, precio) {
-    $('#codProducto').val(codigo);
-    $('#nombreProducto').val(descripcion);
-    $('#unidadProducto').val(unidad);
-    $('#precioProducto').val(precio);
-    $('#modalBuscarProducto').modal('hide');
-    $('#cantidadProducto').focus();
-}
+  function seleccionarProducto(codigo, descripcion, unidad, precio) {
+    $("#codProducto").val(codigo);
+    $("#nombreProducto").val(descripcion);
+    $("#unidadProducto").val(unidad);
+    $("#precioProducto").val(precio);
+    $("#modalBuscarProducto").modal("hide");
+    $("#cantidadProducto").focus();
+  }
 
-function buscarProductoPorCodigo(codigo) {
+  function buscarProductoPorCodigo(codigo) {
     // Simulación de búsqueda por código
-    if (codigo === 'PROD001') {
-        seleccionarProducto('PROD001', 'Producto Ejemplo 1', 'UND', 100.00);
+    if (codigo === "PROD001") {
+      seleccionarProducto("PROD001", "Producto Ejemplo 1", "UND", 100.0);
     } else {
-        alert('Producto no encontrado');
+      alert("Producto no encontrado");
     }
-}
+  }
 
-function calcularTotalProducto() {
-    const cantidad = parseFloat($('#cantidadProducto').val()) || 0;
-    const precio = parseFloat($('#precioProducto').val()) || 0;
-    const descuento = parseFloat($('#descuentoProducto').val()) || 0;
+  function calcularTotalProducto() {
+    const cantidad = parseFloat($("#cantidadProducto").val()) || 0;
+    const precio = parseFloat($("#precioProducto").val()) || 0;
+    const descuento = parseFloat($("#descuentoProducto").val()) || 0;
 
     const subtotal = cantidad * precio;
     const descuentoMonto = subtotal * (descuento / 100);
     const total = subtotal - descuentoMonto;
 
-    $('#totalProducto').val(total.toFixed(2));
-}
+    $("#totalProducto").val(total.toFixed(2));
+  }
 
-function agregarProductoATabla() {
-    const codigo = $('#codProducto').val();
-    const descripcion = $('#nombreProducto').val();
-    const unidad = $('#unidadProducto').val();
-    const cantidad = parseFloat($('#cantidadProducto').val()) || 0;
-    const precio = parseFloat($('#precioProducto').val()) || 0;
-    const descuento = parseFloat($('#descuentoProducto').val()) || 0;
-    const total = parseFloat($('#totalProducto').val()) || 0;
+  function agregarProductoATabla() {
+    const codigo = $("#codProducto").val();
+    const descripcion = $("#nombreProducto").val();
+    const unidad = $("#unidadProducto").val();
+    const cantidad = parseFloat($("#cantidadProducto").val()) || 0;
+    const precio = parseFloat($("#precioProducto").val()) || 0;
+    const descuento = parseFloat($("#descuentoProducto").val()) || 0;
+    const total = parseFloat($("#totalProducto").val()) || 0;
 
     if (!codigo || !descripcion || cantidad <= 0) {
-        alert('Complete todos los campos del producto');
-        return;
+      alert("Complete todos los campos del producto");
+      return;
     }
 
     const fila = `
@@ -633,37 +875,39 @@ function agregarProductoATabla() {
         </tr>
     `;
 
-    $('#productosBody').append(fila);
+    $("#productosBody").append(fila);
     limpiarCamposProducto();
     calcularTotalesFactura();
-}
+  }
 
-function limpiarCamposProducto() {
-    $('#codProducto, #nombreProducto, #unidadProducto, #cantidadProducto, #precioProducto, #descuentoProducto, #totalProducto').val('');
-    $('#codProducto').focus();
-}
+  function limpiarCamposProducto() {
+    $(
+      "#codProducto, #nombreProducto, #unidadProducto, #cantidadProducto, #precioProducto, #descuentoProducto, #totalProducto"
+    ).val("");
+    $("#codProducto").focus();
+  }
 
-function eliminarProducto(btn) {
-    $(btn).closest('tr').remove();
+  function eliminarProducto(btn) {
+    $(btn).closest("tr").remove();
     calcularTotalesFactura();
-}
+  }
 
-function calcularTotalesFactura() {
+  function calcularTotalesFactura() {
     let subtotal = 0;
-    $('#productosBody tr').each(function() {
-        const totalProducto = parseFloat($(this).find('td:eq(6)').text()) || 0;
-        subtotal += totalProducto;
+    $("#productosBody tr").each(function () {
+      const totalProducto = parseFloat($(this).find("td:eq(6)").text()) || 0;
+      subtotal += totalProducto;
     });
 
     const iva = subtotal * 0.16;
-    const descuentoGeneral = parseFloat($('#descuentoGeneral').val()) || 0;
+    const descuentoGeneral = parseFloat($("#descuentoGeneral").val()) || 0;
     const descuentoMonto = subtotal * (descuentoGeneral / 100);
     const total = subtotal + iva - descuentoMonto;
 
-    $('#subtotal').text(subtotal.toFixed(2));
-    $('#iva').text(iva.toFixed(2));
-    $('#descuentoTotal').text(descuentoMonto.toFixed(2));
-    $('#totalFactura').text(total.toFixed(2));
-}
+    $("#subtotal").text(subtotal.toFixed(2));
+    $("#iva").text(iva.toFixed(2));
+    $("#descuentoTotal").text(descuentoMonto.toFixed(2));
+    $("#totalFactura").text(total.toFixed(2));
+  }
 </script>
 {% endblock %}
