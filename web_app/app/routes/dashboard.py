@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, session, flash, redirect, url_for
 from flask_login import login_required, current_user
-from app.menu import generar_menu_html
 import logging
+
+logger = logging.getLogger(__name__)
 
 logger = logging.getLogger(__name__)
 
@@ -13,16 +14,12 @@ dashboard_bp = Blueprint('dashboard', __name__)
 def index():
     """Página principal del dashboard"""
     try:
-        # Obtener menú del usuario desde la sesión
+        # Obtener menú del usuario desde la sesión (temporalmente vacío)
         menu_data = session.get('menu_data', {})
-        empresa_actual = session.get('empresa_actual')
+        empresa_actual = session.get('empresa_actual', {})
 
-        if not menu_data:
-            flash('No se pudo cargar el menú del usuario. Contacte al administrador.', 'warning')
-            logger.warning(f'Menú no disponible para usuario {current_user.login}')
-
-        # Generar HTML del menú
-        menu_html = generar_menu_html(menu_data)
+        # Generar HTML del menú (placeholder por ahora)
+        menu_html = "<!-- Menú no implementado aún -->"
 
         # Estadísticas del dashboard
         stats = {
@@ -32,12 +29,15 @@ def index():
             'productos_stock': 0
         }
 
-        # Aquí se cargarían las estadísticas reales desde la base de datos
-        # Por ahora, valores de ejemplo
+        # Obtener empresa actual como objeto
+        from app.models import Compania
+        empresa_obj = None
+        if empresa_actual:
+            empresa_obj = Compania.query.filter_by(codigo=empresa_actual).first()
 
         return render_template('dashboard.html',
                              menu_html=menu_html,
-                             empresa_actual=empresa_actual,
+                             empresa_actual=empresa_obj,
                              stats=stats,
                              user=current_user)
 

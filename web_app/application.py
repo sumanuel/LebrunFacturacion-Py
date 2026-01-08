@@ -17,8 +17,8 @@ from app.models import db
 from app.auth import auth_bp
 from app.routes.dashboard import dashboard_bp
 from app.routes.errors import errors_bp
+from app.facturacion import facturacion_bp
 # Los siguientes blueprints se implementarán próximamente:
-# from app.routes.facturacion import facturacion_bp
 # from app.routes.clientes import clientes_bp
 # from app.routes.bancos import bancos_bp
 # from app.routes.complementos import complementos_bp
@@ -79,8 +79,8 @@ def create_app(config_name='default'):
     csrf.exempt(app.view_functions['auth.login'])
     app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
     app.register_blueprint(errors_bp)
+    app.register_blueprint(facturacion_bp, url_prefix='/facturacion')
     # Los siguientes blueprints se implementarán próximamente:
-    # app.register_blueprint(facturacion_bp, url_prefix='/facturacion')
     # app.register_blueprint(clientes_bp, url_prefix='/clientes')
     # app.register_blueprint(bancos_bp, url_prefix='/bancos')
     # app.register_blueprint(complementos_bp, url_prefix='/complementos')

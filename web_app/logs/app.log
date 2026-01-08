@@ -511,3 +511,127 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 19:04:44,825 - application - INFO - Request GET /dashboard/index took 0.01s
 2026-01-07 19:04:44,868 - application - INFO - Request GET /static/js/app.js took 0.00s
 2026-01-07 19:04:44,868 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:43:28,303 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo default
+2026-01-07 20:48:42,072 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:48:42,073 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:48:42,882 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:48:42,883 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:49:37,148 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:49:37,149 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:49:37,953 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:49:37,954 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:49:42,284 - application - INFO - Request GET / took 0.02s
+2026-01-07 20:49:42,406 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 20:49:42,414 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 20:49:42,613 - application - INFO - Request GET /favicon.ico took 0.00s
+2026-01-07 20:49:43,776 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 20:49:43,874 - application - INFO - Request GET /auth/login took 0.08s
+2026-01-07 20:49:43,928 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:49:43,928 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:49:50,580 - application - INFO - Request POST /auth/login took 0.02s
+2026-01-07 20:49:50,647 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:49:50,648 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:49:54,623 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 20:49:54,668 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:49:54,668 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:04,014 - application - INFO - Request POST /auth/login took 0.04s
+2026-01-07 20:50:04,069 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 20:50:04,072 - application - INFO - Request GET /static/js/app.js took 0.01s
+2026-01-07 20:50:06,812 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 20:50:06,845 - application - INFO - Request GET /dashboard/index took 0.02s
+2026-01-07 20:50:06,902 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:06,902 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:09,576 - application - INFO - Request GET /facturacion/nueva took 0.01s
+2026-01-07 20:50:09,630 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:09,631 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:15,107 - application - INFO - Request GET /clientes/nuevo took 0.01s
+2026-01-07 20:50:15,165 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:15,166 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:16,340 - application - INFO - Request GET /dashboard/index took 0.01s
+2026-01-07 20:50:16,397 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:16,398 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:29,673 - application - INFO - Request GET /dashboard/index took 0.01s
+2026-01-07 20:50:29,719 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:29,719 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:50:53,755 - application - INFO - Request GET / took 0.00s
+2026-01-07 20:50:53,838 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:50:53,838 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:51:00,152 - application - INFO - Request GET /dashboard/stats took 0.01s
+2026-01-07 20:51:30,133 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 20:51:46,776 - application - INFO - Request GET /facturacion/facturas took 0.00s
+2026-01-07 20:51:46,786 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 20:51:46,800 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:51:46,800 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:51:55,773 - application - INFO - Request POST /auth/login took 0.01s
+2026-01-07 20:51:55,789 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:51:55,792 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:52:00,136 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 20:52:05,999 - application - INFO - Request GET /facturacion/facturas took 0.00s
+2026-01-07 20:52:06,008 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 20:52:06,025 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:52:06,025 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:52:16,807 - application - INFO - Request POST /auth/login took 0.01s
+2026-01-07 20:52:16,825 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:52:16,826 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:52:29,834 - application - INFO - Request GET /dashboard/stats took 0.01s
+2026-01-07 20:52:35,154 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 20:52:35,165 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 20:52:35,181 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:52:35,183 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:53:00,142 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 20:53:30,381 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:53:30,382 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:53:30,467 - application - INFO - Request GET /dashboard/stats took 0.06s
+2026-01-07 20:53:34,385 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:53:34,386 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:56:40,254 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:56:40,255 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:56:41,077 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:56:41,078 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:56:44,186 - application - INFO - Request GET /dashboard/index took 0.00s
+2026-01-07 20:56:44,303 - application - INFO - Request GET /auth/login took 0.11s
+2026-01-07 20:56:44,377 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 20:56:44,383 - application - INFO - Request GET /static/js/app.js took 0.06s
+2026-01-07 20:56:53,622 - application - INFO - Request POST /auth/login took 0.03s
+2026-01-07 20:56:53,639 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:56:53,643 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:57:12,288 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:57:12,289 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:12,690 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:58:12,691 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:14,750 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:58:14,750 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:16,839 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:58:16,840 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:21,821 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:58:21,822 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:22,592 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 20:58:22,593 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 20:58:31,178 - application - INFO - Request GET /facturacion/facturas took 0.14s
+2026-01-07 20:58:31,316 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 20:58:31,334 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 20:58:31,670 - application - INFO - Request GET /favicon.ico took 0.01s
+2026-01-07 20:59:15,554 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 20:59:25,450 - application - INFO - Request GET /facturacion/nueva took 0.00s
+2026-01-07 20:59:25,509 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 20:59:25,509 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:59:27,510 - application - INFO - Request GET /dashboard/index took 0.01s
+2026-01-07 20:59:27,575 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 20:59:27,576 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 20:59:58,136 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:00:21,555 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:00:21,556 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:00:22,255 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:00:22,257 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:00:28,196 - application - INFO - Request GET /dashboard/stats took 0.07s
+2026-01-07 21:00:58,140 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:01:28,125 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:04:49,287 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:04:49,288 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:04:50,063 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:04:50,064 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:04:54,465 - application - INFO - Request GET /facturacion/facturas took 0.11s
+2026-01-07 21:04:54,567 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 21:04:54,599 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 21:05:20,137 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:06:20,140 - application - INFO - Request GET /dashboard/stats took 0.00s

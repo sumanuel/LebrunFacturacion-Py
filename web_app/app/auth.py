@@ -5,6 +5,7 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request,
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash
 import logging
+import uuid
 
 from app.models import UsuarioSistema, Compania, SesionUsuario, db
 
@@ -43,8 +44,8 @@ def login():
 
             # Verificar contraseña
             if not user.verify_password(password):
-                user.intentos_fallidos += 1
-                db.session.commit()
+                # user.intentos_fallidos += 1
+                # db.session.commit()
                 flash('Contraseña incorrecta.', 'error')
                 logger.warning(f'Intento de login fallido: contraseña incorrecta para usuario {username}')
                 return render_template('login.html', companies=companies)
@@ -70,8 +71,8 @@ def login():
             login_user(user)
 
             # Actualizar información de login
-            user.intentos_fallidos = 0
-            user.ultimo_acceso = db.func.now()
+            # user.intentos_fallidos = 0
+            # user.ultimo_acceso = db.func.now()
 
             # Guardar compañía seleccionada en sesión
             session['empresa_actual'] = company_code
@@ -80,6 +81,7 @@ def login():
             # Crear registro de sesión
             nueva_sesion = SesionUsuario(
                 usuario_id=user.id,
+                token_sesion=str(uuid.uuid4()),
                 ip_address=request.remote_addr,
                 user_agent=request.headers.get('User-Agent', ''),
                 activo=True

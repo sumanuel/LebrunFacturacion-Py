@@ -152,12 +152,24 @@
               </a>
             </div>
             {% endfor %} {% else %}
+            <div class="col-md-3 mb-3">
+              <a
+                href="{{ url_for('facturacion.lista_facturas') }}"
+                class="btn btn-outline-primary btn-block h-100 d-flex flex-column align-items-center justify-content-center p-3"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Ver lista de facturas emitidas"
+              >
+                <i class="fas fa-file-invoice fa-2x mb-2"></i>
+                <span class="small text-center">Ver Facturas</span>
+              </a>
+            </div>
             <div class="col-12">
               <div class="alert alert-info text-center">
                 <i class="fas fa-info-circle fa-2x mb-3"></i>
-                <h5>No hay accesos rápidos disponibles</h5>
+                <h5>Accesos Rápidos Limitados</h5>
                 <p>
-                  Contacte al administrador para configurar los permisos de
+                  Contacte al administrador para configurar más permisos de
                   menú.
                 </p>
               </div>
