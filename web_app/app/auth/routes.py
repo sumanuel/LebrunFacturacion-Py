@@ -31,7 +31,7 @@ def login():
         # Validar campos obligatorios
         if not username or not password or not company_code:
             flash('Todos los campos son obligatorios.', 'error')
-            return render_template('login.html', companies=companies)
+            return render_template('auth/login.html', companies=companies)
 
         try:
             # Buscar usuario
@@ -40,7 +40,7 @@ def login():
             if not user:
                 flash('Usuario no encontrado.', 'error')
                 logger.warning(f'Intento de login fallido: usuario {username} no existe')
-                return render_template('login.html', companies=companies)
+                return render_template('auth/login.html', companies=companies)
 
             # Verificar contraseña
             if not user.verify_password(password):
@@ -48,24 +48,24 @@ def login():
                 # db.session.commit()
                 flash('Contraseña incorrecta.', 'error')
                 logger.warning(f'Intento de login fallido: contraseña incorrecta para usuario {username}')
-                return render_template('login.html', companies=companies)
+                return render_template('auth/login.html', companies=companies)
 
             # Verificar si usuario está activo
             if not user.is_active():
                 flash('Usuario inactivo. Contacte al administrador.', 'error')
-                return render_template('login.html', companies=companies)
+                return render_template('auth/login.html', companies=companies)
 
             # Verificar permisos para la compañía
             company = Compania.query.filter_by(codigo=company_code).first()
             if not company:
                 flash('Compañía no encontrada.', 'error')
-                return render_template('login.html', companies=companies)
+                return render_template('auth/login.html', companies=companies)
 
             # Verificar permisos
             # permiso = user.permisos_compania.filter_by(compania_codigo=company_code).first()
             # if not permiso or not permiso.activo:
             #     flash('No tiene permisos para acceder a esta compañía.', 'error')
-            #     return render_template('login.html', companies=companies)
+            #     return render_template('auth/login.html', companies=companies)
 
             # Login exitoso
             login_user(user)
@@ -102,17 +102,17 @@ def login():
             db.session.rollback()
             logger.error(f'Error en login: {str(e)}')
             flash('Error interno del sistema. Intente nuevamente.', 'error')
-            return render_template('login.html', companies=companies)
+            return render_template('auth/login.html', companies=companies)
 
     # GET request - mostrar formulario
     try:
         # Obtener compañías activas (empre_actual = 1)
         companies = Compania.query.filter_by(activo=True).all()
-        return render_template('login.html', companies=companies)
+        return render_template('auth/login.html', companies=companies)
     except Exception as e:
         logger.error(f'Error cargando compañías: {str(e)}')
         flash('Error cargando lista de compañías.', 'error')
-        return render_template('login.html', companies=[])
+        return render_template('auth/login.html', companies=[])
 
 @auth_bp.route('/logout')
 @login_required

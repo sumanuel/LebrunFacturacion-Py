@@ -14,10 +14,10 @@ from config import config
 
 # Importar módulos de la aplicación
 from app.models import db
-from app.auth import auth_bp
-from app.routes.dashboard import dashboard_bp
+from app.auth.routes import auth_bp
+from app.dashboard.routes import dashboard_bp
 from app.routes.errors import errors_bp
-from app.facturacion import facturacion_bp
+from app.facturacion.routes import facturacion_bp
 # Los siguientes blueprints se implementarán próximamente:
 # from app.routes.clientes import clientes_bp
 # from app.routes.bancos import bancos_bp

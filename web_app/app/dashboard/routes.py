@@ -4,8 +4,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-logger = logging.getLogger(__name__)
-
 dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/')
@@ -35,7 +33,7 @@ def index():
         if empresa_actual:
             empresa_obj = Compania.query.filter_by(codigo=empresa_actual).first()
 
-        return render_template('dashboard.html',
+        return render_template('dashboard/dashboard.html',
                              menu_html=menu_html,
                              empresa_actual=empresa_obj,
                              stats=stats,

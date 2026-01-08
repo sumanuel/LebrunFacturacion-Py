@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from app.models import FacturaCabecera, Cliente, db
+from app.facturacion.models import FacturaCabecera, Cliente, db
 from sqlalchemy import and_, or_
 
 facturacion_bp = Blueprint('facturacion', __name__, url_prefix='/facturacion')
@@ -47,7 +47,7 @@ def lista_facturas():
 
     facturas = query.all()
 
-    return render_template('facturas.html', 
+    return render_template('facturacion/facturas.html',
                          facturas=facturas,
                          tipo=tipo,
                          buscar=buscar,
