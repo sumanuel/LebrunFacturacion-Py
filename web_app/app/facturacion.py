@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from app.models import FacturaCabecera, db
+from app.models import FacturaCabecera, Cliente, db
 from sqlalchemy import and_, or_
 
 facturacion_bp = Blueprint('facturacion', __name__, url_prefix='/facturacion')

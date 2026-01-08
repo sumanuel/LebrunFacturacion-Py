@@ -636,3 +636,27 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 21:05:20,137 - application - INFO - Request GET /dashboard/stats took 0.00s
 2026-01-07 21:06:20,140 - application - INFO - Request GET /dashboard/stats took 0.00s
 2026-01-07 21:07:20,133 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:07:59,264 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:07:59,265 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:08:05,303 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:08:05,304 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:08:06,091 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:08:06,092 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:08:20,185 - application - INFO - Request GET /dashboard/stats took 0.05s
+2026-01-07 21:08:24,573 - application - INFO - Request GET /facturacion/facturas took 0.05s
+2026-01-07 21:08:24,717 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 21:08:24,726 - application - INFO - Request GET /static/js/app.js took 0.09s
+2026-01-07 21:08:36,505 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:08:36,506 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:08:37,274 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:08:37,276 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:08:59,214 - application - INFO - Request GET /facturacion/facturas took 0.11s
+2026-01-07 21:08:59,323 - application - INFO - Request GET /static/css/style.css took 0.06s
+2026-01-07 21:08:59,341 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 21:09:07,589 - application - INFO - Request GET /facturacion/facturas took 0.01s
+2026-01-07 21:09:07,648 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:09:07,649 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:09:17,865 - application - INFO - Request GET /facturacion/facturas took 0.02s
+2026-01-07 21:09:17,949 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:09:17,949 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:09:20,138 - application - INFO - Request GET /dashboard/stats took 0.00s
