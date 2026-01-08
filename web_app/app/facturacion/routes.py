@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from app.facturacion.models import FacturaCabecera, FacturaDetalle, Cliente, Vendedor, Producto, db
 from sqlalchemy import and_, or_
@@ -101,6 +101,110 @@ def nueva_factura():
             return redirect(url_for('facturacion.nueva_factura'))
 
     return render_template('facturacion/nueva_factura.html', fecha_actual=fecha_actual)
+
+@facturacion_bp.route('/api/test')
+def api_test():
+    """API de prueba simple"""
+    return jsonify({'message': 'API funcionando', 'status': 'ok'})
+
+@facturacion_bp.route('/api/clientes')
+@login_required
+def api_clientes():
+    """API para obtener lista de clientes para el modal
+    
+    Equivalente a lbxClientes() en el código C#:
+    - Consulta: SELECT cli_codigo,cli_nombre,cli_rif,cli_categoria,cli_situacion FROM admclientes LIMIT 45
+    - Filtra por situacion = 'Activo'
+    """
+    # Obtener todos los clientes activos (equivalente a lbxClientes() LIMIT 45)
+    clientes = Cliente.query.filter(Cliente.situacion == 'Activo').limit(45).all()
+    
+    # Convertir a formato JSON
+    clientes_data = []
+    for cliente in clientes:
+        clientes_data.append({
+            'codigo': cliente.codigo,
+            'nombre': cliente.nombre.strip() if cliente.nombre else '',
+            'rif': (cliente.rif or '').strip(),
+            'categoria': (cliente.categoria or '').strip(),
+            'situacion': (cliente.situacion or '').strip()
+        })
+    
+    return jsonify({'clientes': clientes_data})
+
+@facturacion_bp.route('/api/clientes/buscar')
+@login_required
+def api_buscar_clientes():
+    """API para buscar clientes por código, nombre o RIF
+    
+    Equivalente a clienteBuscado() en el código C#:
+    - Consulta: SELECT cli_codigo,cli_nombre,cli_rif,cli_categoria,cli_situacion 
+                FROM admclientes WHERE cli_codigo LIKE '%$1%' OR cli_nombre LIKE '%$1%' OR cli_rif LIKE '%$1%'
+    - Filtra por situacion = 'Activo'
+    """
+    termino = request.args.get('q', '').strip()
+    
+    if not termino:
+        return jsonify({'clientes': []})
+    
+    # Buscar clientes que coincidan con el término (equivalente a clienteBuscado())
+    clientes = Cliente.query.filter(
+        or_(
+            Cliente.codigo.contains(termino),
+            Cliente.nombre.contains(termino),
+            Cliente.rif.contains(termino)
+        )
+    ).filter(Cliente.situacion == 'Activo').limit(50).all()
+    
+    # Convertir a formato JSON
+    clientes_data = []
+    for cliente in clientes:
+        clientes_data.append({
+            'codigo': cliente.codigo,
+            'nombre': cliente.nombre.strip() if cliente.nombre else '',
+            'rif': (cliente.rif or '').strip(),
+            'categoria': (cliente.categoria or '').strip(),
+            'situacion': (cliente.situacion or '').strip()
+        })
+    
+    return jsonify({'clientes': clientes_data})
+
+# @facturacion_bp.route('/api/clientes/buscar')
+# # @login_required  # Temporalmente comentado para pruebas
+# def api_buscar_clientes():
+#     """API para buscar clientes por código, nombre o RIF
+#     
+#     Equivalente a clienteBuscado() en el código C#:
+#     - Consulta: SELECT cli_codigo,cli_nombre,cli_rif,cli_categoria,cli_situacion 
+#                 FROM admclientes WHERE cli_codigo LIKE '%$1%' OR cli_nombre LIKE '%$1%' OR cli_rif LIKE '%$1%'
+#     - Filtra por situacion = 'Activo'
+#     """
+#     termino = request.args.get('q', '').strip()
+#     
+#     if not termino:
+#         return jsonify({'clientes': []})
+#     
+#     # Buscar clientes que coincidan con el término (equivalente a clienteBuscado())
+#     clientes = Cliente.query.filter(
+#         or_(
+#             Cliente.codigo.contains(termino),
+#             Cliente.nombre.contains(termino),
+#             Cliente.rif.contains(termino)
+#         )
+#     ).filter(Cliente.situacion == 'Activo').limit(50).all()
+#     
+#     # Convertir a formato JSON
+#     clientes_data = []
+#     for cliente in clientes:
+#         clientes_data.append({
+#             'codigo': cliente.codigo,
+#             'nombre': cliente.nombre.strip() if cliente.nombre else '',
+#             'rif': (cliente.rif or '').strip(),
+#             'categoria': (cliente.categoria or '').strip(),
+#             'situacion': (cliente.situacion or '').strip()
+#         })
+#     
+#     return jsonify({'clientes': clientes_data})
 
 @facturacion_bp.route('/factura/<int:id>')
 @login_required

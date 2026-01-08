@@ -9,6 +9,8 @@ class Cliente(db.Model):
     nombre = db.Column('cli_nombre', db.String(100), nullable=False)
     rif = db.Column('cli_rif', db.String(20))
     telefono = db.Column('cli_telefono', db.String(20))
+    categoria = db.Column('cli_categoria', db.String(50))
+    situacion = db.Column('cli_situacion', db.String(20))
 
     def __repr__(self):
         return f'<Cliente {self.nombre}>'

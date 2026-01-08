@@ -269,7 +269,7 @@
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>RIF</th>
-                <th>Teléfono</th>
+                <th>Categoría</th>
               </tr>
             </thead>
             <tbody id="clientesBody">
@@ -369,6 +369,24 @@ $(document).ready(function() {
         cargarClientes();
     });
 
+    // Funcionalidad de búsqueda en el modal de clientes
+    $('#btnBuscarClienteModal').click(function() {
+        const termino = $('#buscarCliente').val().trim();
+        buscarClientes(termino);
+    });
+
+    $('#buscarCliente').keypress(function(e) {
+        if (e.which === 13) {
+            const termino = $(this).val().trim();
+            buscarClientes(termino);
+        }
+    });
+
+    // Limpiar búsqueda cuando se abre el modal
+    $('#modalBuscarCliente').on('shown.bs.modal', function() {
+        $('#buscarCliente').val('').focus();
+    });
+
     $('#codCliente').keypress(function(e) {
         if (e.which === 13) {
             buscarClientePorCodigo($(this).val());
@@ -419,23 +437,65 @@ $(document).ready(function() {
 
 // Funciones auxiliares
 function cargarClientes() {
-    // Simulación de carga de clientes
-    const clientes = [
-        {codigo: '0001', nombre: 'Cliente Ejemplo 1', rif: 'J-12345678-9', telefono: '0212-1234567'},
-        {codigo: '0002', nombre: 'Cliente Ejemplo 2', rif: 'J-98765432-1', telefono: '0212-7654321'}
-    ];
+    // Cargar lista inicial de clientes desde la API
+    $.ajax({
+        url: '/facturacion/api/clientes',
+        method: 'GET',
+        success: function(data) {
+            mostrarClientesEnTabla(data.clientes);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al cargar clientes:', error);
+            alert('Error al cargar la lista de clientes');
+        }
+    });
+}
 
+function buscarClientes(termino) {
+    if (!termino || termino.trim() === '') {
+        // Si no hay término de búsqueda, cargar lista completa
+        cargarClientes();
+        return;
+    }
+    
+    // Buscar clientes por término
+    $.ajax({
+        url: '/facturacion/api/clientes/buscar',
+        method: 'GET',
+        data: { q: termino },
+        success: function(data) {
+            mostrarClientesEnTabla(data.clientes);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al buscar clientes:', error);
+            alert('Error al buscar clientes');
+        }
+    });
+}
+
+function mostrarClientesEnTabla(clientes) {
     let html = '';
     clientes.forEach(cliente => {
+        // Escapar comillas simples en los valores para evitar errores JavaScript
+        const codigo = cliente.codigo || '';
+        const nombre = (cliente.nombre || '').replace(/'/g, "\\'");
+        const rif = cliente.rif || '';
+        const categoria = cliente.categoria || '';
+        
         html += `
-            <tr onclick="seleccionarCliente('${cliente.codigo}', '${cliente.nombre}', '${cliente.rif}', '${cliente.telefono}')">
-                <td>${cliente.codigo}</td>
-                <td>${cliente.nombre}</td>
-                <td>${cliente.rif}</td>
-                <td>${cliente.telefono}</td>
+            <tr onclick="seleccionarCliente('${codigo}', '${nombre}', '${rif}', '')">
+                <td>${codigo}</td>
+                <td>${cliente.nombre || ''}</td>
+                <td>${rif}</td>
+                <td>${categoria}</td>
             </tr>
         `;
     });
+    
+    if (clientes.length === 0) {
+        html = '<tr><td colspan="4" class="text-center text-muted">No se encontraron clientes</td></tr>';
+    }
+    
     $('#clientesBody').html(html);
 }
 
@@ -443,7 +503,7 @@ function seleccionarCliente(codigo, nombre, rif, telefono) {
     $('#codCliente').val(codigo);
     $('#nombreCliente').val(nombre);
     $('#rifCliente').val(rif);
-    $('#telefonoCliente').val(telefono);
+    $('#telefonoCliente').val(telefono || ''); // Campo telefono no disponible en la API
     $('#modalBuscarCliente').modal('hide');
 }
 
