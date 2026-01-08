@@ -46,6 +46,13 @@ def lista_facturas():
 
     facturas = query.all()
 
+    return render_template('facturacion/facturas.html', 
+                         facturas=facturas, 
+                         tipo=tipo, 
+                         buscar=buscar, 
+                         fecha_desde=fecha_desde, 
+                         fecha_hasta=fecha_hasta)
+
 @facturacion_bp.route('/nueva', methods=['GET', 'POST'])
 @login_required
 def nueva_factura():

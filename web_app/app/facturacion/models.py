@@ -45,28 +45,24 @@ class FacturaCabecera(db.Model):
 
     id = db.Column('dcli_numero', db.String(20), primary_key=True)
     fecha = db.Column('dcli_fecha', db.DateTime)
-    tipo = db.Column('dcli_tipo', db.String(10))  # FAV, DEV, NDE
+    tipo = db.Column('dcli_tipdoc', db.String(10))  # FAV, DEV, NDE
     cod_cliente = db.Column('dcli_codigo', db.String(20))
-    cod_vendedor = db.Column('dcli_vendedor', db.String(10))
-    condicion_pago = db.Column('dcli_condicion', db.String(20))  # CONTADO, CREDITO
+    cod_vendedor = db.Column('dcli_codven', db.String(10))
+    condicion_pago = db.Column('dcli_condic', db.String(20))  # CONTADO, CREDITO
     plazo_dias = db.Column('dcli_plazo', db.Integer, default=0)
-    divisa = db.Column('dcli_divisa', db.String(10), default='VES')
-    descuento_general = db.Column('dcli_descuento', db.Float, default=0.0)
+    divisa = db.Column('dcli_codmon', db.String(10), default='VES')
+    descuento_general = db.Column('dcli_descdoc', db.Float, default=0.0)
     subtotal = db.Column('dcli_subtotal', db.Float, default=0.0)
-    iva = db.Column('dcli_iva', db.Float, default=0.0)
-    descuento_total = db.Column('dcli_desc_total', db.Float, default=0.0)
-    total = db.Column('dcli_total', db.Float, default=0.0)
+    iva = db.Column('dcli_mtoiva', db.Float, default=0.0)
+    total = db.Column('dcli_neto', db.Float, default=0.0)
     estado = db.Column('dcli_estado', db.String(20), default='ACTIVA')
     num_fiscal = db.Column('dcli_numfis', db.String(20))
-    usuario_creacion = db.Column('dcli_usuario_crea', db.String(50))
-    fecha_creacion = db.Column('dcli_fecha_crea', db.DateTime)
-    usuario_modificacion = db.Column('dcli_usuario_mod', db.String(50))
-    fecha_modificacion = db.Column('dcli_fecha_mod', db.DateTime)
+    usuario_creacion = db.Column('dcli_usuario', db.String(50))
 
     # Relationships
-    cliente = db.relationship('Cliente', foreign_keys=[cod_cliente], primaryjoin="FacturaCabecera.cod_cliente == Cliente.codigo", lazy='joined')
-    vendedor = db.relationship('Vendedor', foreign_keys=[cod_vendedor], primaryjoin="FacturaCabecera.cod_vendedor == Vendedor.codigo", lazy='joined')
-    detalles = db.relationship('FacturaDetalle', back_populates='factura', lazy='joined')
+    cliente = db.relationship('Cliente', foreign_keys=[cod_cliente], primaryjoin="FacturaCabecera.cod_cliente == Cliente.codigo", lazy='select')
+    vendedor = db.relationship('Vendedor', foreign_keys=[cod_vendedor], primaryjoin="FacturaCabecera.cod_vendedor == Vendedor.codigo", lazy='select')
+    detalles = db.relationship('FacturaDetalle', back_populates='factura', lazy='select')
 
     def __repr__(self):
         return f'<Factura {self.id}>'
@@ -94,7 +90,7 @@ class FacturaDetalle(db.Model):
     )
 
     # Relationship con producto
-    producto = db.relationship('Producto', foreign_keys=[cod_producto], primaryjoin="FacturaDetalle.cod_producto == Producto.codigo", lazy='joined')
+    producto = db.relationship('Producto', foreign_keys=[cod_producto], primaryjoin="FacturaDetalle.cod_producto == Producto.codigo", lazy='select')
 
     def __repr__(self):
         return f'<FacturaDetalle {self.id}-{self.linea}>'
