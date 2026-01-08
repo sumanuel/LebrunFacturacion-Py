@@ -1162,3 +1162,15 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 22:17:52,388 - application - INFO - Request GET /facturacion/facturas took 0.23s
 2026-01-07 22:17:52,431 - application - INFO - Request GET /static/css/style.css took 0.00s
 2026-01-07 22:17:52,436 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 22:18:20,138 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 22:18:22,927 - application - INFO - Request GET /facturacion/facturas took 0.00s
+2026-01-07 22:18:22,935 - application - INFO - Request GET /facturacion/nueva took 0.00s
+2026-01-07 22:18:31,739 - application - INFO - Request GET /facturacion/facturas took 0.16s
+2026-01-07 22:18:31,785 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 22:18:31,785 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 22:18:34,192 - application - INFO - Request GET /facturacion/nueva took 0.01s
+2026-01-07 22:18:34,238 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 22:18:34,239 - application - INFO - Request GET /static/js/app.js took 0.01s
+2026-01-07 22:18:50,137 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 22:19:20,134 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 22:19:50,132 - application - INFO - Request GET /dashboard/stats took 0.00s
