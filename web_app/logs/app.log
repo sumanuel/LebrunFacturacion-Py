@@ -700,3 +700,4 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 21:17:59,006 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
 2026-01-07 21:17:59,246 - application - INFO - Tablas de base de datos creadas/verficadas
 2026-01-07 21:17:59,247 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:18:10,189 - application - INFO - Request GET /dashboard/stats took 0.05s
