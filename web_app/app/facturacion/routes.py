@@ -14,8 +14,8 @@ def lista_facturas():
     fecha_desde = request.args.get('fecha_desde', '')
     fecha_hasta = request.args.get('fecha_hasta', '')
 
-    # Query base - evitar joins con tablas que no existen
-    query = db.session.query(FacturaCabecera)
+    # Query base con JOIN para búsqueda por cliente
+    query = db.session.query(FacturaCabecera).join(Cliente, FacturaCabecera.cod_cliente == Cliente.codigo)
 
     # Filtrar por tipo (asumiendo que hay una columna para tipo, o filtrar por prefijo)
     # Por ahora, mostrar todas, pero en el futuro filtrar por tipo
@@ -25,7 +25,8 @@ def lista_facturas():
         query = query.filter(
             or_(
                 FacturaCabecera.id.contains(buscar),
-                FacturaCabecera.num_fiscal.contains(buscar)
+                FacturaCabecera.num_fiscal.contains(buscar),
+                Cliente.nombre.contains(buscar)
             )
         )
 
