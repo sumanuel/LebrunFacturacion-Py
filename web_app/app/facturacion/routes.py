@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from app.facturacion.models import FacturaCabecera, Cliente, db
+from app.facturacion.models import FacturaCabecera, FacturaDetalle, Cliente, Vendedor, Producto, db
 from sqlalchemy import and_, or_
 
 facturacion_bp = Blueprint('facturacion', __name__, url_prefix='/facturacion')
@@ -14,8 +14,8 @@ def lista_facturas():
     fecha_desde = request.args.get('fecha_desde', '')
     fecha_hasta = request.args.get('fecha_hasta', '')
 
-    # Query base
-    query = FacturaCabecera.query
+    # Query base - evitar joins con tablas que no existen
+    query = db.session.query(FacturaCabecera)
 
     # Filtrar por tipo (asumiendo que hay una columna para tipo, o filtrar por prefijo)
     # Por ahora, mostrar todas, pero en el futuro filtrar por tipo
@@ -25,7 +25,6 @@ def lista_facturas():
         query = query.filter(
             or_(
                 FacturaCabecera.id.contains(buscar),
-                FacturaCabecera.cliente.has(Cliente.nombre.contains(buscar)),
                 FacturaCabecera.num_fiscal.contains(buscar)
             )
         )
@@ -47,9 +46,57 @@ def lista_facturas():
 
     facturas = query.all()
 
-    return render_template('facturacion/facturas.html',
-                         facturas=facturas,
-                         tipo=tipo,
-                         buscar=buscar,
-                         fecha_desde=fecha_desde,
-                         fecha_hasta=fecha_hasta)
+@facturacion_bp.route('/nueva', methods=['GET', 'POST'])
+@login_required
+def nueva_factura():
+    """Página para crear nueva factura"""
+    from datetime import datetime
+    fecha_actual = datetime.now().strftime('%Y-%m-%d')
+
+    if request.method == 'POST':
+        # Procesar el formulario de nueva factura
+        try:
+            # Obtener datos del formulario
+            tipo_documento = request.form.get('tipoDocumento')
+            correlativo = request.form.get('correlativo')
+            fecha = request.form.get('fecha')
+            cod_cliente = request.form.get('codCliente')
+            cod_vendedor = request.form.get('codVendedor')
+            condicion_pago = request.form.get('condicionPago')
+            plazo_dias = int(request.form.get('plazoDias', 0))
+            divisa = request.form.get('divisa')
+            descuento_general = float(request.form.get('descuentoGeneral', 0))
+
+            # Crear nueva factura
+            nueva_factura = FacturaCabecera(
+                fecha=datetime.strptime(fecha, '%Y-%m-%d'),
+                tipo=tipo_documento,
+                cod_cliente=cod_cliente,
+                cod_vendedor=cod_vendedor,
+                condicion_pago=condicion_pago,
+                plazo_dias=plazo_dias,
+                divisa=divisa,
+                descuento_general=descuento_general,
+                usuario_creacion=current_user.username,
+                fecha_creacion=datetime.now()
+            )
+
+            db.session.add(nueva_factura)
+            db.session.commit()
+
+            flash('Factura creada exitosamente', 'success')
+            return redirect(url_for('facturacion.detalle_factura', id=nueva_factura.id))
+
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Error al crear la factura: {str(e)}', 'error')
+            return redirect(url_for('facturacion.nueva_factura'))
+
+    return render_template('facturacion/nueva_factura.html', fecha_actual=fecha_actual)
+
+@facturacion_bp.route('/factura/<int:id>')
+@login_required
+def detalle_factura(id):
+    """Ver detalles de una factura específica"""
+    factura = FacturaCabecera.query.get_or_404(id)
+    return render_template('facturacion/detalle_factura.html', factura=factura)

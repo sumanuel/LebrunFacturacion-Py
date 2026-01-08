@@ -8,9 +8,35 @@ class Cliente(db.Model):
     codigo = db.Column('cli_codigo', db.String(20), primary_key=True)
     nombre = db.Column('cli_nombre', db.String(100), nullable=False)
     rif = db.Column('cli_rif', db.String(20))
+    telefono = db.Column('cli_telefono', db.String(20))
 
     def __repr__(self):
         return f'<Cliente {self.nombre}>'
+
+class Vendedor(db.Model):
+    """Modelo para vendedores"""
+    __tablename__ = 'admvendedores'
+    __bind_key__ = 'sisadm'
+
+    codigo = db.Column('ven_codigo', db.String(10), primary_key=True)
+    nombre = db.Column('ven_nombre', db.String(100), nullable=False)
+
+    def __repr__(self):
+        return f'<Vendedor {self.nombre}>'
+
+class Producto(db.Model):
+    """Modelo para productos"""
+    __tablename__ = 'admproductos'
+    __bind_key__ = 'sisadm'
+
+    codigo = db.Column('pro_codigo', db.String(20), primary_key=True)
+    nombre = db.Column('pro_nombre', db.String(100), nullable=False)
+    unidad = db.Column('pro_unidad', db.String(10))
+    precio = db.Column('pro_precio', db.Float, default=0.0)
+    stock = db.Column('pro_stock', db.Float, default=0.0)
+
+    def __repr__(self):
+        return f'<Producto {self.nombre}>'
 
 class FacturaCabecera(db.Model):
     """Modelo para cabeceras de facturas"""
@@ -18,12 +44,57 @@ class FacturaCabecera(db.Model):
     __bind_key__ = 'sisadm'
 
     id = db.Column('dcli_numero', db.String(20), primary_key=True)
-    codigo_cliente = db.Column('dcli_codigo', db.String(20))
     fecha = db.Column('dcli_fecha', db.DateTime)
-    estado = db.Column('dcli_estado', db.String(20))
-    monto = db.Column('dcli_neto', db.Float)
+    tipo = db.Column('dcli_tipo', db.String(10))  # FAV, DEV, NDE
+    cod_cliente = db.Column('dcli_codigo', db.String(20))
+    cod_vendedor = db.Column('dcli_vendedor', db.String(10))
+    condicion_pago = db.Column('dcli_condicion', db.String(20))  # CONTADO, CREDITO
+    plazo_dias = db.Column('dcli_plazo', db.Integer, default=0)
+    divisa = db.Column('dcli_divisa', db.String(10), default='VES')
+    descuento_general = db.Column('dcli_descuento', db.Float, default=0.0)
+    subtotal = db.Column('dcli_subtotal', db.Float, default=0.0)
+    iva = db.Column('dcli_iva', db.Float, default=0.0)
+    descuento_total = db.Column('dcli_desc_total', db.Float, default=0.0)
+    total = db.Column('dcli_total', db.Float, default=0.0)
+    estado = db.Column('dcli_estado', db.String(20), default='ACTIVA')
     num_fiscal = db.Column('dcli_numfis', db.String(20))
-    imp = db.Column('dcli_mtoiva', db.Float)
+    usuario_creacion = db.Column('dcli_usuario_crea', db.String(50))
+    fecha_creacion = db.Column('dcli_fecha_crea', db.DateTime)
+    usuario_modificacion = db.Column('dcli_usuario_mod', db.String(50))
+    fecha_modificacion = db.Column('dcli_fecha_mod', db.DateTime)
 
-    # Relationship con cliente
-    cliente = db.relationship('Cliente', foreign_keys=[codigo_cliente], primaryjoin="FacturaCabecera.codigo_cliente == Cliente.codigo", lazy='joined')
+    # Relationships
+    cliente = db.relationship('Cliente', foreign_keys=[cod_cliente], primaryjoin="FacturaCabecera.cod_cliente == Cliente.codigo", lazy='joined')
+    vendedor = db.relationship('Vendedor', foreign_keys=[cod_vendedor], primaryjoin="FacturaCabecera.cod_vendedor == Vendedor.codigo", lazy='joined')
+    detalles = db.relationship('FacturaDetalle', back_populates='factura', lazy='joined')
+
+    def __repr__(self):
+        return f'<Factura {self.id}>'
+
+class FacturaDetalle(db.Model):
+    """Modelo para detalles de facturas"""
+    __tablename__ = 'admdocclid'
+    __bind_key__ = 'sisadm'
+
+    id = db.Column('dclid_numero', db.String(20), primary_key=True)
+    linea = db.Column('dclid_linea', db.Integer, primary_key=True)
+    cod_producto = db.Column('dclid_codigo', db.String(20))
+    descripcion = db.Column('dclid_descripcion', db.String(100))
+    unidad = db.Column('dclid_unidad', db.String(10))
+    cantidad = db.Column('dclid_cantidad', db.Float, default=0.0)
+    precio = db.Column('dclid_precio', db.Float, default=0.0)
+    descuento = db.Column('dclid_descuento', db.Float, default=0.0)
+    total = db.Column('dclid_total', db.Float, default=0.0)
+
+    # Relationship con factura
+    factura = db.relationship('FacturaCabecera', back_populates='detalles')
+    # Foreign key constraint
+    __table_args__ = (
+        db.ForeignKeyConstraint([id], [FacturaCabecera.id]),
+    )
+
+    # Relationship con producto
+    producto = db.relationship('Producto', foreign_keys=[cod_producto], primaryjoin="FacturaDetalle.cod_producto == Producto.codigo", lazy='joined')
+
+    def __repr__(self):
+        return f'<FacturaDetalle {self.id}-{self.linea}>'

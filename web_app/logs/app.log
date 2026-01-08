@@ -868,3 +868,81 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 21:32:20,129 - application - INFO - Request GET /dashboard/stats took 0.00s
 2026-01-07 21:33:20,137 - application - INFO - Request GET /dashboard/stats took 0.00s
 2026-01-07 21:34:20,128 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:35:20,134 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:36:07,648 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:36:07,649 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:36:07,786 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:36:07,787 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:36:20,188 - application - INFO - Request GET /dashboard/stats took 0.06s
+2026-01-07 21:36:56,988 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:36:56,990 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:36:57,164 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:36:57,164 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:00,058 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:00,059 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:00,234 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:00,234 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:03,120 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:03,123 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:03,269 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:03,270 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:16,298 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:16,300 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:16,426 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:16,428 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:18,401 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:18,402 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:18,525 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:18,526 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:21,469 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:21,470 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:21,599 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:21,600 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:28,968 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:28,974 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:37:29,779 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:37:29,779 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:38:56,677 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:38:56,679 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:38:57,514 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:38:57,514 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:39:08,629 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:39:10,048 - application - INFO - Request GET /dashboard/index took 0.04s
+2026-01-07 21:39:10,092 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:39:10,102 - application - INFO - Request GET /static/js/app.js took 0.01s
+2026-01-07 21:39:48,578 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:39:48,578 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:39:49,384 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:39:49,385 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:39:57,499 - application - INFO - Request GET /facturacion/nueva took 0.04s
+2026-01-07 21:39:57,559 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:39:57,562 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 21:40:09,574 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:40:09,575 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:40:11,196 - application - INFO - Request GET /dashboard/stats took 0.06s
+2026-01-07 21:40:41,135 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:40:49,869 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:40:49,870 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:40:50,683 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:40:50,685 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:40:53,075 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:40:53,076 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:40:53,753 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:40:53,754 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:40:57,471 - application - INFO - Request GET /facturacion/nueva took 0.08s
+2026-01-07 21:40:57,580 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 21:40:57,584 - application - INFO - Request GET /static/js/app.js took 0.08s
+2026-01-07 21:41:11,129 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:41:50,619 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:41:50,619 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:41:51,430 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:41:51,431 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:41:58,019 - application - INFO - Request GET /facturacion/nueva took 0.08s
+2026-01-07 21:41:58,130 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 21:41:58,134 - application - INFO - Request GET /static/css/style.css took 0.08s
+2026-01-07 21:42:41,398 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:42:41,399 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:42:42,150 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:42:42,151 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:43:20,137 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:44:20,139 - application - INFO - Request GET /dashboard/stats took 0.00s
