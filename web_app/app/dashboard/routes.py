@@ -14,7 +14,7 @@ def index():
     try:
         # Obtener menú del usuario desde la sesión (temporalmente vacío)
         menu_data = session.get('menu_data', {})
-        empresa_actual = session.get('empresa_actual', {})
+        empresa_actual = session.get('empresa_actual')
 
         # Generar HTML del menú (placeholder por ahora)
         menu_html = "<!-- Menú no implementado aún -->"
@@ -29,6 +29,7 @@ def index():
 
         # Obtener empresa actual como objeto
         from app.models import Compania
+        empresa_actual = session.get('empresa_actual')
         empresa_obj = None
         if empresa_actual:
             empresa_obj = Compania.query.filter_by(codigo=empresa_actual).first()

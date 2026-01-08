@@ -38,7 +38,7 @@ def login():
             user = UsuarioSistema.query.filter_by(login=username).first()
 
             if not user:
-                flash('Usuario no encontrado.', 'error')
+                flash('Usuario no encontrado.', 'danger')
                 logger.warning(f'Intento de login fallido: usuario {username} no existe')
                 return render_template('auth/login.html', companies=companies)
 
@@ -46,7 +46,7 @@ def login():
             if not user.verify_password(password):
                 # user.intentos_fallidos += 1
                 # db.session.commit()
-                flash('Contraseña incorrecta.', 'error')
+                flash('Contraseña incorrecta.', 'danger')
                 logger.warning(f'Intento de login fallido: contraseña incorrecta para usuario {username}')
                 return render_template('auth/login.html', companies=companies)
 

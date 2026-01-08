@@ -701,3 +701,67 @@ CREATE TABLE confpermisoscompania (
 2026-01-07 21:17:59,246 - application - INFO - Tablas de base de datos creadas/verficadas
 2026-01-07 21:17:59,247 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
 2026-01-07 21:18:10,189 - application - INFO - Request GET /dashboard/stats took 0.05s
+2026-01-07 21:18:40,129 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:19:00,763 - application - INFO - Request GET /auth/logout took 0.00s
+2026-01-07 21:19:00,812 - application - INFO - Request GET /auth/login took 0.03s
+2026-01-07 21:19:00,932 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 21:19:00,934 - application - INFO - Request GET /static/js/app.js took 0.07s
+2026-01-07 21:19:09,911 - application - INFO - Request POST /auth/login took 0.01s
+2026-01-07 21:19:09,960 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:19:09,961 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:19:18,054 - application - INFO - Request POST /auth/login took 0.03s
+2026-01-07 21:19:18,094 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:19:18,097 - application - INFO - Request GET /static/js/app.js took 0.01s
+2026-01-07 21:19:21,905 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 21:19:21,936 - application - INFO - Request GET /dashboard/index took 0.02s
+2026-01-07 21:19:21,985 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 21:19:21,985 - application - INFO - Request GET /static/js/app.js took 0.01s
+2026-01-07 21:19:52,135 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:20:22,133 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:20:52,029 - application - INFO - Request GET /dashboard/stats took 0.00s
+2026-01-07 21:21:09,264 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:09,265 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:09,509 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:09,510 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:19,377 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:19,378 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:19,568 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:19,569 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:22,601 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:22,603 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:22,680 - application - INFO - Request GET /dashboard/stats took 0.05s
+2026-01-07 21:21:23,388 - application - INFO - Tablas de base de datos creadas/verficadas
+2026-01-07 21:21:23,388 - application - INFO - Aplicación Lebrun Facturación v1.0.0 iniciada en modo development
+2026-01-07 21:21:50,790 - application - INFO - Request GET /auth/logout took 0.00s
+2026-01-07 21:21:50,826 - application - INFO - Request GET /auth/login took 0.02s
+2026-01-07 21:21:50,945 - application - INFO - Request GET /static/js/app.js took 0.06s
+2026-01-07 21:21:50,958 - application - INFO - Request GET /static/css/style.css took 0.07s
+2026-01-07 21:22:01,237 - application - INFO - Request POST /auth/login took 0.01s
+2026-01-07 21:22:01,294 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:01,294 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:11,029 - application - INFO - Request POST /auth/login took 0.03s
+2026-01-07 21:22:11,086 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:11,090 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 21:22:24,055 - application - INFO - Request POST /auth/login took 0.00s
+2026-01-07 21:22:24,098 - application - INFO - Request GET /dashboard/index took 0.02s
+2026-01-07 21:22:24,144 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:24,144 - application - INFO - Request GET /static/css/style.css took 0.01s
+2026-01-07 21:22:29,317 - application - INFO - Request GET /auth/logout took 0.00s
+2026-01-07 21:22:29,334 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 21:22:29,376 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:29,376 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:33,537 - application - INFO - Request POST /auth/login took 0.02s
+2026-01-07 21:22:33,581 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:33,581 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:39,115 - application - INFO - Request POST /auth/login took 0.00s
+2026-01-07 21:22:39,135 - application - INFO - Request GET /dashboard/index took 0.01s
+2026-01-07 21:22:39,178 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:39,179 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:41,948 - application - INFO - Request GET /auth/logout took 0.00s
+2026-01-07 21:22:41,966 - application - INFO - Request GET /auth/login took 0.00s
+2026-01-07 21:22:42,010 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:42,010 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:44,741 - application - INFO - Request GET /auth/login took 0.01s
+2026-01-07 21:22:44,789 - application - INFO - Request GET /static/css/style.css took 0.00s
+2026-01-07 21:22:44,790 - application - INFO - Request GET /static/js/app.js took 0.00s
+2026-01-07 21:22:45,315 - application - INFO - Request GET /favicon.ico took 0.00s
