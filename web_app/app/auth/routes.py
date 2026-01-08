@@ -78,16 +78,21 @@ def login():
             session['empresa_actual'] = company_code
             g.empresa_actual = company
 
-            # Crear registro de sesión
-            nueva_sesion = SesionUsuario(
-                usuario_id=user.id,
-                token_sesion=str(uuid.uuid4()),
-                ip_address=request.remote_addr,
-                user_agent=request.headers.get('User-Agent', ''),
-                activo=True
-            )
-            db.session.add(nueva_sesion)
-            db.session.commit()
+            # Crear registro de sesión (opcional)
+            try:
+                nueva_sesion = SesionUsuario(
+                    usuario_id=user.id,
+                    token_sesion=str(uuid.uuid4()),
+                    ip_address=request.remote_addr,
+                    user_agent=request.headers.get('User-Agent', ''),
+                    activo=True
+                )
+                db.session.add(nueva_sesion)
+                db.session.commit()
+            except Exception as e:
+                logger.warning(f'No se pudo crear registro de sesión: {str(e)}')
+                db.session.rollback()
+                # No mostrar error al usuario, continuar con login
 
             logger.info(f'Login exitoso: usuario {username} en compañía {company_code}')
 

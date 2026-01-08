@@ -62,7 +62,7 @@ class PermisoCompania(db.Model):
     __bind_key__ = 'sisadm'
 
     id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column('usu_codigo', db.Integer, nullable=False)  # db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
+    usuario_id = db.Column('usu_codigo', db.String(4), nullable=False)  # db.ForeignKey('confusuario.usu_codigo'), nullable=False)
     compania_codigo = db.Column('empre_codigo', db.String(10), nullable=False)  # db.ForeignKey('confdatosempresa.empre_codigo'), nullable=False)
     activo = db.Column('perm_activo', db.Boolean, default=True)
 
@@ -107,9 +107,10 @@ class MapaMenu(db.Model):
 class SesionUsuario(db.Model):
     """Modelo para controlar sesiones de usuario"""
     __tablename__ = 'conf_sesiones'
+    __bind_key__ = 'sysconf'
 
     id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column(db.Integer, nullable=False)  # db.ForeignKey('confusuarios.usu_codigo'), nullable=False)
+    usuario_id = db.Column(db.String(4), nullable=False)  # db.ForeignKey('confusuario.usu_codigo'), nullable=False)
     token_sesion = db.Column(db.String(255), unique=True, nullable=False)
     ip_address = db.Column(db.String(45))
     user_agent = db.Column(db.Text)
